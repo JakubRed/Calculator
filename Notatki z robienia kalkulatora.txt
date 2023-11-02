@@ -1,0 +1,16 @@
+MÓJ VS2022 UZYWA PRZECINKÓW ZAMIAST KROPEK! TRZEBA UWAŻAĆ PRZY PRZENOSZENIU!
+
+Tutoriale:
+https://www.youtube.com/watch?v=5Dm8kXii7zU
+
+Kalkulator chamsko wzorowany na kalkulatorze z windowsa oraz z kalkulatora mojej mamy ;)
+'Button0'powstał oryginalnie jako 'Butto10' więc był ostatni stworzony, potem przeniesiony
+został do góry (żeby było zgodnie z numeracją) ale pewnie nie wszędzie więc czasem może
+być na dole.
+'Button10' to nazwa roboczego przycisku, chwilę przed zmianą nazwy.
+Kursor zmieniony na rączkę.
+Przyciski zorientowane na dolny prawy róg.
+Funkcja kasowania nazywa się tabulaRasa.
+Wciskanie znaku "=" nie będize powodować ponawiania się ostatniego działania. (można to łatwo zrobić ale to 
+będzie komplikować jeszcze kod, a i tak już jest go sporo).
+Czy pierwszy przecinek ma generować "," czy "0,"?
