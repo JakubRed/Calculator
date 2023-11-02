@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Nauka Programowania\\C#\\CalculatorKS\\KalkulatorKS\\KalkulatorKS.csproj": {}
+    "C:\\Users\\jakub\\Source\\Repos\\Calculator\\KalkulatorKS\\KalkulatorKS.csproj": {}
   },
   "projects": {
-    "E:\\Nauka Programowania\\C#\\CalculatorKS\\KalkulatorKS\\KalkulatorKS.csproj": {
+    "C:\\Users\\jakub\\Source\\Repos\\Calculator\\KalkulatorKS\\KalkulatorKS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Nauka Programowania\\C#\\CalculatorKS\\KalkulatorKS\\KalkulatorKS.csproj",
+        "projectUniqueName": "C:\\Users\\jakub\\Source\\Repos\\Calculator\\KalkulatorKS\\KalkulatorKS.csproj",
         "projectName": "KalkulatorKS",
-        "projectPath": "E:\\Nauka Programowania\\C#\\CalculatorKS\\KalkulatorKS\\KalkulatorKS.csproj",
+        "projectPath": "C:\\Users\\jakub\\Source\\Repos\\Calculator\\KalkulatorKS\\KalkulatorKS.csproj",
         "packagesPath": "C:\\Users\\jakub\\.nuget\\packages\\",
-        "outputPath": "E:\\Nauka Programowania\\C#\\CalculatorKS\\KalkulatorKS\\obj\\",
+        "outputPath": "C:\\Users\\jakub\\Source\\Repos\\Calculator\\KalkulatorKS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jakub\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -62,41 +62,32 @@ namespace KalkulatorKS
         #region Operators buttons
         private void ButtonAddition_Click(object sender, EventArgs e)
         {
-            if (Backend.enterOperator('+')) //assiogn operator
+            if (Backend.enterOperator('+')) //assign operator
             {   //the first operation
                 ResultDisplay.Text = Convert.ToString(Backend.showFormerResult()) + " " + Char.ToString(Backend.showOperator());
             }
             else // not the first operation
             {
-                //if (0 != Backend.doTheMath())
-                //{
-                //    //error
-                //}
-                //else
-                //{
-                    ResultDisplay.Text = Convert.ToString(Backend.showFormerResult()) + " " + Char.ToString(Backend.showOperator()) /*+ " " + Backend.showNumber() + " ="*/;
-                    //ResultDisplay.Text += " " + Backend.showNumber() + " =";
-                    Display.Text = Convert.ToString(Backend.showResult());
-                //}
-
+                ResultDisplay.Text = Convert.ToString(Backend.showFormerResult()) + " " + Char.ToString(Backend.showOperator()) /*+ " " + Backend.showNumber() + " ="*/;
+                Display.Text = Convert.ToString(Backend.showResult());
             }
         }
         private void ButtonSubtraction_Click(object sender, EventArgs e)
         {
-            if (Backend.enterOperator('-')) //assiogn operator
+            if (Backend.enterOperator('-')) //assign operator
             {   //the first operation
                 ResultDisplay.Text = Convert.ToString(Backend.showFormerResult()) + " " + Char.ToString(Backend.showOperator());
             }
             else // not the first operation
             {
-     
+
                 ResultDisplay.Text = Convert.ToString(Backend.showFormerResult()) + " " + Char.ToString(Backend.showOperator()) /*+ " " + Backend.showNumber() + " ="*/;
                 Display.Text = Convert.ToString(Backend.showResult());
             }
         }
         private void ButtonDivision_Click(object sender, EventArgs e)
         {
-            if (Backend.enterOperator('/')) //assiogn operator
+            if (Backend.enterOperator('/')) //assign operator
             {   //the first operation
                 ResultDisplay.Text = Convert.ToString(Backend.showFormerResult()) + " " + Char.ToString(Backend.showOperator());
             }
@@ -109,7 +100,7 @@ namespace KalkulatorKS
         }
         private void ButtonMultiplication_Click(object sender, EventArgs e)
         {
-            if (Backend.enterOperator('x')) //assiogn operator
+            if (Backend.enterOperator('x')) //assign operator
             {   //the first operation
                 ResultDisplay.Text = Convert.ToString(Backend.showFormerResult()) + " " + Char.ToString(Backend.showOperator());
             }
@@ -122,7 +113,7 @@ namespace KalkulatorKS
         }
         private void ButtonExponentiation_Click(object sender, EventArgs e)
         {
-            if (Backend.enterOperator('^')) //assiogn operator
+            if (Backend.enterOperator('^')) //assign operator
             {   //the first operation
                 ResultDisplay.Text = Convert.ToString(Backend.showFormerResult()) + " " + Char.ToString(Backend.showOperator());
             }
@@ -139,7 +130,6 @@ namespace KalkulatorKS
         #region Other buttons
         private void ButtonComma_Click(object sender, EventArgs e)
         {
-
             if (!Backend.isCommaInNumber())
             {
                 Backend.enterDigit(",");
@@ -162,18 +152,19 @@ namespace KalkulatorKS
                     case 0:
                         Display.Text = Convert.ToString(Backend.showResult());
                         Backend.cyrcleOfLIfe();
-                        break;
+                    break;
                     case -1:
                         //add sth
-                        break;
+                    break;
                     case -2:
                         Display.Text = "Nie można dzielić przez 0";
-                        break;
+                    break;
                     default:
                         //add sth
-                        break;
+                    break;
                 }
             }
+            ButtonEqual.BackColor = Color.Green;
         }
         private void ButtonCancel_Click(object sender, EventArgs e)
         {

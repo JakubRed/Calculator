@@ -253,6 +253,7 @@
             Controls.Add(Button1);
             Controls.Add(Button0);
             Cursor = Cursors.Hand;
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "Frontend";
             ResumeLayout(false);
         }

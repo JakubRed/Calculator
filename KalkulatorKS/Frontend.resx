@@ -392,10 +392,10 @@
     <value>Segoe UI, 25pt</value>
   </data>
   <data name="Display.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 138</value>
+    <value>6, 138</value>
   </data>
   <data name="Display.Size" type="System.Drawing.Size, System.Drawing">
-    <value>405, 52</value>
+    <value>418, 52</value>
   </data>
   <data name="Display.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -822,10 +822,10 @@
     <value>NoControl</value>
   </data>
   <data name="ResultDisplay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 112</value>
+    <value>6, 112</value>
   </data>
   <data name="ResultDisplay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>406, 26</value>
+    <value>418, 26</value>
   </data>
   <data name="ResultDisplay.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>

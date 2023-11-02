@@ -2,9 +2,9 @@
 {
     static class Backend
     {
-        static double result;
+        static double result = 88; //random easily recognizable number
         static string number = "";
-        static double formerResult;
+        static double formerResult = 88; //random easily recognizable number
         static char equationOperator;
         static bool formerResultEmpty = true;
 
@@ -59,10 +59,13 @@
             equationOperator = enteredOperator;
             if (formerResultEmpty)
             {
-                formerResult = Convert.ToDouble(number);
-                number = "";
-                resultChanged = true;   
-                formerResultEmpty = false;    
+                if (!string.IsNullOrWhiteSpace(number))
+                {
+                    formerResult = Convert.ToDouble(number);
+                    number = "";
+                    resultChanged = true;
+                    formerResultEmpty = false;
+                }
             }
 
             return resultChanged;
