@@ -2,100 +2,135 @@
 {
     static class Backend
     {
-        static double result = 88; //random easily recognizable number
+        static double result = 87; //random easily recognizable number
         static string number = "";
         static double formerResult = 88; //random easily recognizable number
         static char equationOperator;
         static bool formerResultEmpty = true;
+        static bool newCycle = true;
 
 
-        static public void enterDigit(string digit) //or comma
+        static public bool EnterDigit(string digit) //or comma
         {
+            bool startedNewCycle = false;
+            if (number.Equals("") && newCycle)
+            {
+                TabulaRasa();
+                startedNewCycle = true;
+            }
             number += digit;
+            newCycle = false;
+            return startedNewCycle;
         }
-        static public string showNumber()
+
+        static public string ShowNumber()
         {
+            if (number.EndsWith(","))
+            {
+                number = number.Remove(number.Length - 1, 1);
+            }
             return number;
-        }        static public double showFormerResult()
+        }     
+        
+        static public double ShowFormerResult()
         {
             return formerResult;
         }
-        static public char showOperator()
+
+        static public char ShowOperator()
         {
             return equationOperator;
-        }        static public double showResult()
+        }   
+        static public double ShowResult()
         {
             return result;
         }
-        static public bool isItFirstOperation() 
+
+        static public bool IsItFirstOperation() 
         {
             return formerResultEmpty;
         }
-        static public bool isCommaInNumber()
+
+        static public bool IsCommaInNumber()
         {
             return number.Contains(",");
         }  
-        static public bool isNumberEntered()
+
+        static public bool IsNumberEntered()
         {
             return !number.Equals("");
         }
-        static public void shortenTheNumber()
+
+        static public void ShortenTheNumber()
         {
             number = number.Remove(number.Length - 1);
         }
-        static public void oppositeNumber()
+
+        static public void OppositeNumber()
         {
-            number = "-" + number;
+            if (!number.Equals("") && "-" == number.Substring(0,1))
+            {
+              number = number.Remove(0, 1);
+            }
+            else
+            {
+                number = "-" + number;               
+            }
         }
-        static public void cyrcleOfLIfe()
+
+        static public void CircleOfLife()
         {
             formerResult = result;
-            //result = 0;
             number = "";
+            newCycle = true;
+
         }
-        static public bool enterOperator(char enteredOperator)
+
+        static public bool EnterOperator(char enteredOperator)
         {
             bool resultChanged = false;
             equationOperator = enteredOperator;
-            if (formerResultEmpty)
+            if (formerResultEmpty && !string.IsNullOrWhiteSpace(number))
             {
-                if (!string.IsNullOrWhiteSpace(number))
-                {
-                    formerResult = Convert.ToDouble(number);
-                    number = "";
-                    resultChanged = true;
-                    formerResultEmpty = false;
-                }
+                formerResult = Convert.ToDouble(number);
+                number = "";
+                resultChanged = true;
+                formerResultEmpty = false;
             }
-
+            newCycle = false;
             return resultChanged;
         }
-        static public string currentDisplay() //Not complete
+
+        static public string CurrentDisplay() //Not complete
         {
             return number;
         }
-        static public void tabulaRasa(/*bool includeResult*/)
+
+        static public void TabulaRasa(/*bool includeResult*/)
         {
             //if (includeResult)
             //{
-            //    result = 0;
+            result = 0;
             //}
             formerResult = 0;
             formerResultEmpty = true;
             number = "";
             equationOperator = '\0';
+            newCycle = true;
         }
-        static public int doTheMath()
+
+        static public int DoTheMath()
         {
-        int errorCode = 0; //by default set to success
+            int errorCode = 0; //by default set to success
+
             switch (equationOperator)
             {
                 case '+':
                     result = formerResult + Convert.ToDouble(number);
-                break;
+                    break;
                 case '-':
                     result = formerResult - Convert.ToDouble(number); ;
-                break;
+                    break;
                 case '/':
                     if (0 == Convert.ToDouble(number))
                     {
@@ -105,23 +140,18 @@
                     {
                         result = formerResult / Convert.ToDouble(number);
                     }
-                break;
+                    break;
                 case 'x':
                     result = formerResult * Convert.ToDouble(number);
                     break;
                 case '^':
                     result = Math.Pow(formerResult, Convert.ToDouble(number));
-                break;
+                    break;
                 default:
                     errorCode = -1; //unknown error
-                break;
+                    break;
             }
             return errorCode;
-        }
-        static public void cyrcleOfLife()
-        {
-            formerResult = result;
-            result = Convert.ToDouble(number);
         }
     }
 }

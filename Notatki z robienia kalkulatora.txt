@@ -10,7 +10,6 @@ być na dole.
 'Button10' to nazwa roboczego przycisku, chwilę przed zmianą nazwy.
 Kursor zmieniony na rączkę.
 Przyciski zorientowane na dolny prawy róg.
-Funkcja kasowania nazywa się tabulaRasa.
 Wciskanie znaku "=" nie będize powodować ponawiania się ostatniego działania. (można to łatwo zrobić ale to 
 będzie komplikować jeszcze kod, a i tak już jest go sporo).
 Czy pierwszy przecinek ma generować "," czy "0,"?

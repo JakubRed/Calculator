@@ -1,3 +1,5 @@
+using System.Windows.Forms;
+
 namespace KalkulatorKS
 {
     public partial class Frontend : Form
@@ -9,120 +11,71 @@ namespace KalkulatorKS
         #region Digit buttons
         private void Button0_Click(object sender, EventArgs e)
         {
-            Backend.enterDigit("0");
-            Display.Text = Backend.currentDisplay();
+            enterDigit("0");
         }
         private void Button1_Click(object sender, EventArgs e)
         {
-            Backend.enterDigit("1");
-            Display.Text = Backend.currentDisplay();
+            enterDigit("1");
         }
         private void Button2_Click(object sender, EventArgs e)
         {
-            Backend.enterDigit("2");
-            Display.Text = Backend.currentDisplay();
+            enterDigit("2");
         }
         private void Button3_Click(object sender, EventArgs e)
         {
-            Backend.enterDigit("3");
-            Display.Text = Backend.currentDisplay();
+            enterDigit("3");
         }
         private void Button4_Click(object sender, EventArgs e)
         {
-            Backend.enterDigit("4");
-            Display.Text = Backend.currentDisplay();
+            enterDigit("4");
         }
         private void Button5_Click(object sender, EventArgs e)
         {
-            Backend.enterDigit("5");
-            Display.Text = Backend.currentDisplay();
+            enterDigit("5");
         }
         private void Button6_Click(object sender, EventArgs e)
         {
-            Backend.enterDigit("6");
-            Display.Text = Backend.currentDisplay();
+            enterDigit("6");
         }
         private void Button7_Click(object sender, EventArgs e)
         {
-            Backend.enterDigit("7");
-            Display.Text = Backend.currentDisplay();
+            enterDigit("7");
         }
         private void Button8_Click(object sender, EventArgs e)
         {
-            Backend.enterDigit("8");
-            Display.Text = Backend.currentDisplay();
+            enterDigit("8");
         }
         private void Button9_Click(object sender, EventArgs e)
         {
-            Backend.enterDigit("9");
-            Display.Text = Backend.currentDisplay();
+            enterDigit("9");
         }
         #endregion Digit buttons
 
         #region Operators buttons
         private void ButtonAddition_Click(object sender, EventArgs e)
         {
-            if (Backend.enterOperator('+')) //assign operator
-            {   //the first operation
-                ResultDisplay.Text = Convert.ToString(Backend.showFormerResult()) + " " + Char.ToString(Backend.showOperator());
-            }
-            else // not the first operation
-            {
-                ResultDisplay.Text = Convert.ToString(Backend.showFormerResult()) + " " + Char.ToString(Backend.showOperator()) /*+ " " + Backend.showNumber() + " ="*/;
-                Display.Text = Convert.ToString(Backend.showResult());
-            }
+            enterOperator('+');
         }
+
         private void ButtonSubtraction_Click(object sender, EventArgs e)
         {
-            if (Backend.enterOperator('-')) //assign operator
-            {   //the first operation
-                ResultDisplay.Text = Convert.ToString(Backend.showFormerResult()) + " " + Char.ToString(Backend.showOperator());
-            }
-            else // not the first operation
-            {
-
-                ResultDisplay.Text = Convert.ToString(Backend.showFormerResult()) + " " + Char.ToString(Backend.showOperator()) /*+ " " + Backend.showNumber() + " ="*/;
-                Display.Text = Convert.ToString(Backend.showResult());
-            }
+            enterOperator('-');
         }
+
         private void ButtonDivision_Click(object sender, EventArgs e)
         {
-            if (Backend.enterOperator('/')) //assign operator
-            {   //the first operation
-                ResultDisplay.Text = Convert.ToString(Backend.showFormerResult()) + " " + Char.ToString(Backend.showOperator());
-            }
-            else // not the first operation
-            {
-
-                ResultDisplay.Text = Convert.ToString(Backend.showFormerResult()) + " " + Char.ToString(Backend.showOperator()) /*+ " " + Backend.showNumber() + " ="*/;
-                Display.Text = Convert.ToString(Backend.showResult());
-            }
+            enterOperator('/');
         }
+
         private void ButtonMultiplication_Click(object sender, EventArgs e)
         {
-            if (Backend.enterOperator('x')) //assign operator
-            {   //the first operation
-                ResultDisplay.Text = Convert.ToString(Backend.showFormerResult()) + " " + Char.ToString(Backend.showOperator());
-            }
-            else // not the first operation
-            {
-
-                ResultDisplay.Text = Convert.ToString(Backend.showFormerResult()) + " " + Char.ToString(Backend.showOperator()) /*+ " " + Backend.showNumber() + " ="*/;
-                Display.Text = Convert.ToString(Backend.showResult());
-            }
+            enterOperator('x');
         }
+
         private void ButtonExponentiation_Click(object sender, EventArgs e)
         {
-            if (Backend.enterOperator('^')) //assign operator
-            {   //the first operation
-                ResultDisplay.Text = Convert.ToString(Backend.showFormerResult()) + " " + Char.ToString(Backend.showOperator());
-            }
-            else // not the first operation
-            {
 
-                ResultDisplay.Text = Convert.ToString(Backend.showFormerResult()) + " " + Char.ToString(Backend.showOperator()) /*+ " " + Backend.showNumber() + " ="*/;
-                Display.Text = Convert.ToString(Backend.showResult());
-            }
+            enterOperator('^');
         }
 
         #endregion Operators buttons
@@ -130,62 +83,72 @@ namespace KalkulatorKS
         #region Other buttons
         private void ButtonComma_Click(object sender, EventArgs e)
         {
-            if (!Backend.isCommaInNumber())
+            if (!Backend.IsCommaInNumber())
             {
-                Backend.enterDigit(",");
-                Display.Text = Backend.currentDisplay();
+                Backend.EnterDigit(",");
+                Display.Text = Backend.CurrentDisplay();
             }
         }
+
         private void ButtonNegation_Click(object sender, EventArgs e)
         {
-            Backend.oppositeNumber();
-            Display.Text = Backend.currentDisplay();
+            Backend.OppositeNumber();
+            Display.Text = Backend.CurrentDisplay();
         }
+
         private void ButtonEqual_Click(object sender, EventArgs e)
         {
-            if (!Backend.isItFirstOperation() && Backend.isNumberEntered())
+            if (!Backend.IsItFirstOperation() && Backend.IsNumberEntered())
             {
-                ResultDisplay.Text = Backend.showFormerResult() + " " + Backend.showOperator() + " " + Convert.ToString(Backend.showNumber()) + " =";
+                if (0 > Convert.ToDouble(Backend.ShowNumber()))
+                {
+                    //negative number with parenthesis
+                    ResultDisplay.Text = Backend.ShowFormerResult() + " " + Backend.ShowOperator() + " " + "(" + Backend.ShowNumber() + ")" + " =";
+                }
+                else
+                {
+                    ResultDisplay.Text = Backend.ShowFormerResult() + " " + Backend.ShowOperator() + " " + Backend.ShowNumber() + " =";
+                }
 
-                switch (Backend.doTheMath())
+                switch (Backend.DoTheMath())
                 {
                     case 0:
-                        Display.Text = Convert.ToString(Backend.showResult());
-                        Backend.cyrcleOfLIfe();
-                    break;
+                        Display.Text = Convert.ToString(Backend.ShowResult());
+                        Backend.CircleOfLife();
+                        break;
                     case -1:
                         //add sth
-                    break;
+                        break;
                     case -2:
                         Display.Text = "Nie można dzielić przez 0";
-                    break;
+                        break;
                     default:
                         //add sth
-                    break;
+                        break;
                 }
             }
             ButtonEqual.BackColor = Color.Green;
         }
+
         private void ButtonCancel_Click(object sender, EventArgs e)
         {
-            if (Backend.isNumberEntered())
+            if (Backend.IsNumberEntered())
             {
-                Backend.shortenTheNumber();
-
+                Backend.ShortenTheNumber();
             }
             else
             {
-                Backend.tabulaRasa();
+                Backend.TabulaRasa();
                 ResultDisplay.Text = "";
             }
-            Display.Text = Backend.currentDisplay();
+            Display.Text = Backend.CurrentDisplay();
         }
 
         private void ButtonClear_Click(object sender, EventArgs e)
         {
-            Backend.tabulaRasa();
-            Display.Text = Backend.currentDisplay();
-            ResultDisplay.Text = Char.ToString((Backend.showOperator()));
+            Backend.TabulaRasa();
+            Display.Text = Backend.CurrentDisplay();
+            ResultDisplay.Text = Char.ToString((Backend.ShowOperator()));
 
         }
         #endregion Other buttons
@@ -193,7 +156,9 @@ namespace KalkulatorKS
         {
 
         }
+
         private void Operator_Click(object sender, EventArgs e)
+        //probably to be removed
         {
 
         }
@@ -201,6 +166,110 @@ namespace KalkulatorKS
         private void Clock_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void enterDigit(string digit)
+        {
+            if (Backend.EnterDigit(digit))
+            {
+                ResultDisplay.Text = "";
+            }
+            Display.Text = Backend.CurrentDisplay();
+        }
+
+        private void enterOperator(char enteredOperator)
+        {
+            Backend.EnterOperator(enteredOperator);
+            ResultDisplay.Text = Convert.ToString(Backend.ShowFormerResult()) + " " + Char.ToString(Backend.ShowOperator());
+        }
+
+        private void Frontend_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Display_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //Keyboard input management
+        private void Frontend_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.D0:
+                case Keys.NumPad0:
+                    Button0.PerformClick();
+                    break;
+                case Keys.D1:
+                case Keys.NumPad1:
+                    Button1.PerformClick();
+                    break;
+                case Keys.D2:
+                case Keys.NumPad2:
+                    Button2.PerformClick();
+                    break;
+                case Keys.D3:
+                case Keys.NumPad3:
+                    Button3.PerformClick();
+                    break;
+                case Keys.D4:
+                case Keys.NumPad4:
+                    Button4.PerformClick();
+                    break;
+                case Keys.D5:
+                case Keys.NumPad5:
+                    Button5.PerformClick();
+                    break;
+                case Keys.D6:
+                case Keys.NumPad6:
+                    if (Control.ModifierKeys == Keys.Shift)
+                    {
+                        ButtonExponentiation.PerformClick();
+                    }
+                    else
+                    {
+                        Button6.PerformClick();
+                    }
+                    break;
+                case Keys.D7:
+                case Keys.NumPad7:
+                    Button7.PerformClick();
+                    break;
+                case Keys.D8:
+                case Keys.NumPad8:
+                    Button8.PerformClick();
+                    break;
+                case Keys.D9:
+                case Keys.NumPad9:
+                    Button9.PerformClick();
+                    break;
+                case Keys.OemMinus:
+                    ButtonSubtraction.PerformClick();
+                    break;
+                case Keys.Oemplus:
+                    if (Control.ModifierKeys == Keys.Shift)
+                    {
+                        ButtonEqual.PerformClick();
+                    }
+                    else
+                    {
+                        ButtonAddition.PerformClick();
+                    }
+                    break;
+                case Keys.OemQuestion:
+                    ButtonDivision.PerformClick();
+                    break;
+                case Keys.Back:
+                    ButtonCancel.PerformClick();
+                    break;
+                case Keys.Multiply:
+                case Keys.X:
+                    ButtonMultiplication.PerformClick();
+                    break;
+
+            }
         }
     }
 }

@@ -123,6 +123,7 @@
             Display.BackColor = SystemColors.Control;
             resources.ApplyResources(Display, "Display");
             Display.Name = "Display";
+            Display.Click += Display_Click;
             // 
             // ButtonAddition
             // 
@@ -254,7 +255,10 @@
             Controls.Add(Button0);
             Cursor = Cursors.Hand;
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            KeyPreview = true;
             Name = "Frontend";
+            Load += Frontend_Load;
+            KeyDown += Frontend_KeyDown;
             ResumeLayout(false);
         }
 
