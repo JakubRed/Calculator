@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frontend));
             Button1 = new Button();
             Button2 = new Button();
@@ -53,6 +54,7 @@
             Skin = new Label();
             Button0 = new Button();
             ResultDisplay = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // Button1
@@ -224,6 +226,10 @@
             ResultDisplay.Name = "ResultDisplay";
             ResultDisplay.Click += Operator_Click;
             // 
+            // timer1
+            // 
+            timer1.Tick += timer1_Tick;
+            // 
             // Frontend
             // 
             resources.ApplyResources(this, "$this");
@@ -287,5 +293,6 @@
         private Label Skin;
         private Button Button0;
         private Label ResultDisplay;
+        private System.Windows.Forms.Timer timer1;
     }
 }

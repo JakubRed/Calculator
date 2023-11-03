@@ -4,6 +4,10 @@ namespace KalkulatorKS
 {
     public partial class Frontend : Form
     {
+        private void Frontend_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
         public Frontend()
         {
             InitializeComponent();
@@ -157,6 +161,7 @@ namespace KalkulatorKS
 
         }
 
+        #region Clock
         private void Operator_Click(object sender, EventArgs e)
         //probably to be removed
         {
@@ -168,6 +173,11 @@ namespace KalkulatorKS
 
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Clock.Text = DateTime.Now.ToString("hh:mm:ss");
+        }
+        #endregion Clock
         private void enterDigit(string digit)
         {
             if (Backend.EnterDigit(digit))
@@ -183,10 +193,7 @@ namespace KalkulatorKS
             ResultDisplay.Text = Convert.ToString(Backend.ShowFormerResult()) + " " + Char.ToString(Backend.ShowOperator());
         }
 
-        private void Frontend_Load(object sender, EventArgs e)
-        {
 
-        }
 
         private void Display_Click(object sender, EventArgs e)
         {
@@ -271,5 +278,6 @@ namespace KalkulatorKS
 
             }
         }
+
     }
 }
