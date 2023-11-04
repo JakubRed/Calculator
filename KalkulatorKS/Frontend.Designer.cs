@@ -51,12 +51,14 @@
             ButtonCancel = new Button();
             ButtonClear = new Button();
             Clock = new Label();
-            Skin = new Label();
             Button0 = new Button();
             ResultDisplay = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             AnalogClock = new PictureBox();
+            Skin = new ListBox();
+            CatPic = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)AnalogClock).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)CatPic).BeginInit();
             SuspendLayout();
             // 
             // Button1
@@ -207,13 +209,6 @@
             Clock.Name = "Clock";
             Clock.Click += Clock_Click;
             // 
-            // Skin
-            // 
-            Skin.BackColor = SystemColors.Control;
-            resources.ApplyResources(Skin, "Skin");
-            Skin.Name = "Skin";
-            Skin.Click += Skin_Click;
-            // 
             // Button0
             // 
             resources.ApplyResources(Button0, "Button0");
@@ -223,7 +218,7 @@
             // 
             // ResultDisplay
             // 
-            ResultDisplay.BackColor = SystemColors.ScrollBar;
+            ResultDisplay.BackColor = Color.Silver;
             resources.ApplyResources(ResultDisplay, "ResultDisplay");
             ResultDisplay.Name = "ResultDisplay";
             ResultDisplay.Click += Operator_Click;
@@ -240,14 +235,30 @@
             AnalogClock.TabStop = false;
             AnalogClock.Click += AnalogClock_Click;
             // 
+            // Skin
+            // 
+            Skin.AllowDrop = true;
+            resources.ApplyResources(Skin, "Skin");
+            Skin.FormattingEnabled = true;
+            Skin.Items.AddRange(new object[] { resources.GetString("Skin.Items"), resources.GetString("Skin.Items1"), resources.GetString("Skin.Items2") });
+            Skin.Name = "Skin";
+            Skin.SelectedIndexChanged += SKIN_SelectedIndexChanged;
+            // 
+            // CatPic
+            // 
+            resources.ApplyResources(CatPic, "CatPic");
+            CatPic.Name = "CatPic";
+            CatPic.TabStop = false;
+            // 
             // Frontend
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
+            Controls.Add(CatPic);
+            Controls.Add(Skin);
             Controls.Add(AnalogClock);
             Controls.Add(ResultDisplay);
-            Controls.Add(Skin);
             Controls.Add(Clock);
             Controls.Add(ButtonClear);
             Controls.Add(ButtonCancel);
@@ -277,6 +288,7 @@
             Load += Frontend_Load;
             KeyDown += Frontend_KeyDown;
             ((System.ComponentModel.ISupportInitialize)AnalogClock).EndInit();
+            ((System.ComponentModel.ISupportInitialize)CatPic).EndInit();
             ResumeLayout(false);
         }
 
@@ -302,10 +314,11 @@
         private Button ButtonCancel;
         private Button ButtonClear;
         private Label Clock;
-        private Label Skin;
         private Button Button0;
         private Label ResultDisplay;
         private System.Windows.Forms.Timer timer1;
         private PictureBox AnalogClock;
+        private ListBox Skin;
+        private PictureBox CatPic;
     }
 }

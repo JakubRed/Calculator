@@ -11,10 +11,37 @@ namespace KalkulatorKS
         bool isDigitalClockVisible = true; //true - digital clock visible, false - analog clock visible
         int WIDTH = 200, HEIGHT = 200, SEC_HAND = 94, MIN_HAND = 66, HR_HAND = 54;
 
+        Font NormalFontBig = new Font("Segoe UI", 40); //font for skin - Default
+        Font NormalFont = new Font("Segoe UI", 24); 
+        Font NormalFontSmall = new Font("Segoe UI", 12); 
+        Font NormalFontButton = new Font("Segoe UI", 20); //font for skin - Default and Digital
+
+        Font CatFontBig = new Font("Tempus Sans ITC", 40); //font for skin - Cat
+        Font CatFont = new Font("Tempus Sans ITC", 24); 
+        Font CatFontSmall = new Font("Tempus Sans ITC", 18); 
+        Font CatFontButton = new Font("Tempus Sans ITC", 20); 
+
+        Font DigitalFontBig = new Font("Digital-7", 40); //font for skin - Digital
+        Font DigitalFont = new Font("Digital-7", 24); 
+        Font DigitalFontSmall = new Font("Digital-7", 18); 
+        private void Frontend_Load(object sender, EventArgs e)
+        {
+            timer1.Start(); //for clocks
+            CatPic.Visible = false;
+
+            //for analog clock
+            //create bitmap
+            bmp = new Bitmap(WIDTH + 1, HEIGHT + 1);
+            //center
+            cx = WIDTH / 2;
+            cy = HEIGHT / 2;
+
+            //coordinates for minute and second hand
+        }
         //center 
         int cx, cy;
         Bitmap bmp;
-        Graphics g;
+        Graphics AnalogClockLook;
 
         private void button10_Click(object sender, EventArgs e)
         {
@@ -29,23 +56,7 @@ namespace KalkulatorKS
             isDigitalClockVisible = !isDigitalClockVisible;
         }
         #endregion AnalogClock
-        private void Frontend_Load(object sender, EventArgs e)
-        {
-            timer1.Start(); //for clocks
 
-            //for analog clock
-            //create bitmap
-            bmp = new Bitmap(WIDTH + 1, HEIGHT + 1);
-            //center
-            cx = WIDTH / 2;
-            cy = HEIGHT / 2;
-
-            //backcolor
-            AnalogClock.BackColor = Color.White;
-            // tak się to robi dla form this.BackColor = Color.White;
-
-            //coordinates for minute and second hand
-        }
         private int[] msCoord(int val, int hlen)
         {
             int[] coord = new int[2];
@@ -85,8 +96,7 @@ namespace KalkulatorKS
         {
             //analog clock
             //create graphics
-            g = Graphics.FromImage(bmp);
-
+            AnalogClockLook = Graphics.FromImage(bmp);
             //get time
             int ss = DateTime.Now.Second;
             int mm = DateTime.Now.Minute;
@@ -96,7 +106,8 @@ namespace KalkulatorKS
 
             if (!isDigitalClockVisible) //digital clock
             {
-                Clock.Text = DateTime.Now.ToString("hh:mm:ss");
+                Clock.BackColor = this.BackColor;
+                Clock.Text = DateTime.Now.ToString("H:m:s"); //24-hour format 
                 AnalogClock.Visible = false;
                 Clock.Visible = true;
             }
@@ -105,41 +116,42 @@ namespace KalkulatorKS
                 AnalogClock.Visible = true;
                 Clock.Visible = false;
                 //clear
-                g.Clear(Color.LightGray);
+                AnalogClockLook.Clear(this.BackColor);
 
                 //draw circle
-                g.DrawEllipse(new Pen(Color.Black, 1f), 0, 0, WIDTH - 2, HEIGHT - 2);
+                AnalogClockLook.DrawEllipse(new Pen(Color.Black, 1f), 0, 0, WIDTH - 2, HEIGHT - 2);
 
                 //draw figure
                 //numbers
-                //g.DrawString("12", new Font("Arial", 12), Brushes.Black, new PointF(90, 2));
-                //g.DrawString("3", new Font("Arial", 12), Brushes.Black, new PointF(180, 84));
-                //g.DrawString("6", new Font("Arial", 12), Brushes.Black, new PointF(90, 180));
-                //g.DrawString("9", new Font("Arial", 12), Brushes.Black, new PointF(0, 88));
+                //AnalogClockLook.DrawString("12", new Font("Arial", 12), Brushes.Black, new PointF(90, 2));
+                //AnalogClockLook.DrawString("3", new Font("Arial", 12), Brushes.Black, new PointF(180, 84));
+                //AnalogClockLook.DrawString("6", new Font("Arial", 12), Brushes.Black, new PointF(90, 180));
+                //AnalogClockLook.DrawString("9", new Font("Arial", 12), Brushes.Black, new PointF(0, 88));
+
 
                 //lines
-                g.DrawString("|", new Font("Arial", 12), Brushes.Black, new PointF(95, 0));
-                g.DrawString("—", new Font("Arial", 12), Brushes.Black, new PointF(178, 90));
-                g.DrawString("|", new Font("Arial", 12), Brushes.Black, new PointF(95, 178));
-                g.DrawString("—", new Font("Arial", 12), Brushes.Black, new PointF(0, 90));
+                AnalogClockLook.DrawString("|", new Font("Arial", 12), Brushes.Black, new PointF(95, 0));
+                AnalogClockLook.DrawString("—", new Font("Arial", 12), Brushes.Black, new PointF(178, 90));
+                AnalogClockLook.DrawString("|", new Font("Arial", 12), Brushes.Black, new PointF(95, 178));
+                AnalogClockLook.DrawString("—", new Font("Arial", 12), Brushes.Black, new PointF(0, 90));
 
                 //second hand
                 handCoord = msCoord(ss, SEC_HAND);
-                g.DrawLine(new Pen(Color.Black, 2f), new Point(cx, cy), new Point(handCoord[0], handCoord[1]));
+                AnalogClockLook.DrawLine(new Pen(Color.Black, 2f), new Point(cx, cy), new Point(handCoord[0], handCoord[1]));
 
                 //minut hand
                 handCoord = msCoord(mm, MIN_HAND);
-                g.DrawLine(new Pen(Color.Black, 3f), new Point(cx, cy), new Point(handCoord[0], handCoord[1]));
+                AnalogClockLook.DrawLine(new Pen(Color.Black, 3f), new Point(cx, cy), new Point(handCoord[0], handCoord[1]));
 
                 //hour hand
                 handCoord = hrCoord(hh % 12, mm, HR_HAND);
-                g.DrawLine(new Pen(Color.Black, 4f), new Point(cx, cy), new Point(handCoord[0], handCoord[1]));
+                AnalogClockLook.DrawLine(new Pen(Color.Black, 4f), new Point(cx, cy), new Point(handCoord[0], handCoord[1]));
 
                 //load bmp in AnalogClock
                 AnalogClock.Image = bmp;
 
                 //dispose
-                g.Dispose();
+                AnalogClockLook.Dispose();
             }
         }
         //coordinates for hour hand
@@ -275,7 +287,6 @@ namespace KalkulatorKS
                         break;
                 }
             }
-            ButtonEqual.BackColor = Color.Green;
         }
 
         private void ButtonCancel_Click(object sender, EventArgs e)
@@ -400,9 +411,204 @@ namespace KalkulatorKS
                 case Keys.X:
                     ButtonMultiplication.PerformClick();
                     break;
-
             }
         }
 
+        private void SKIN_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (Skin.Items[Skin.SelectedIndex])
+            {
+                case "Default":
+                    this.BackColor = Color.LightGray;
+                    Clock.ForeColor = Color.Black;
+                    Clock.Font = NormalFontBig;
+
+                    Display.Font = NormalFont;
+                    Display.ForeColor = Color.Black;
+                    Display.BackColor = Color.White;
+
+                    ResultDisplay.ForeColor = Color.Black;
+                    ResultDisplay.BackColor = Color.Silver;
+                    ResultDisplay.Font = NormalFontSmall;
+                    CatPic.Visible = false;
+
+                    #region coloring normal buttons
+                    ButtonCancel.BackColor = Color.LightGray;
+                    ButtonCancel.ForeColor = Color.Black;
+                    ButtonClear.BackColor = Color.LightGray;
+                    ButtonClear.ForeColor = Color.Black;
+                    Button0.BackColor = Color.LightGray;
+                    Button1.BackColor = Color.LightGray;
+                    Button2.BackColor = Color.LightGray;
+                    Button3.BackColor = Color.LightGray;
+                    Button4.BackColor = Color.LightGray;
+                    Button5.BackColor = Color.LightGray;
+                    Button6.BackColor = Color.LightGray;
+                    Button7.BackColor = Color.LightGray;
+                    Button8.BackColor = Color.LightGray;
+                    Button9.BackColor = Color.LightGray;
+                    ButtonEqual.BackColor = SystemColors.ActiveCaption;
+                    ButtonSubtraction.BackColor = Color.LightGray;
+                    ButtonDivision.BackColor = Color.LightGray;
+                    ButtonMultiplication.BackColor = Color.LightGray;
+                    ButtonNegation.BackColor = Color.LightGray;
+                    ButtonAddition.BackColor = Color.LightGray;
+                    ButtonComma.BackColor = Color.LightGray;
+                    ButtonExponentiation.BackColor = Color.LightGray;
+                    #endregion coloring normal buttons
+                    #region button font                   
+                    ButtonCancel.Font = NormalFontButton;
+                    ButtonCancel.Font = NormalFontButton;
+                    ButtonClear.Font = NormalFontButton;
+                    ButtonClear.Font = NormalFontButton;
+                    Button0.Font = NormalFontButton;
+                    Button1.Font = NormalFontButton;
+                    Button2.Font = NormalFontButton;
+                    Button3.Font = NormalFontButton;
+                    Button4.Font = NormalFontButton;
+                    Button5.Font = NormalFontButton;
+                    Button6.Font = NormalFontButton;
+                    Button7.Font = NormalFontButton;
+                    Button8.Font = NormalFontButton;
+                    Button9.Font = NormalFontButton;
+                    ButtonEqual.Font = NormalFontButton;
+                    ButtonSubtraction.Font = NormalFontButton;
+                    ButtonDivision.Font = NormalFontButton;
+                    ButtonMultiplication.Font = NormalFontButton;
+                    ButtonNegation.Font = NormalFontButton;
+                    ButtonAddition.Font = NormalFontButton;
+                    ButtonComma.Font = NormalFontButton;
+                    ButtonExponentiation.Font = NormalFontButton;
+                    #endregion button font
+                    break;
+                case "Cat": //cute cat
+                    this.BackColor = Color.LightPink;
+                    Clock.ForeColor = Color.Black;
+                    ResultDisplay.BackColor = Color.Pink;
+                    Display.BackColor = Color.White;
+
+                    Clock.Font = CatFontBig;
+                    Display.Font = CatFont;
+                    ResultDisplay.Font = CatFontSmall;
+
+                    CatPic.Visible = true;
+                    #region coloring normal buttons
+                    ButtonCancel.BackColor = Color.Pink;
+                    ButtonCancel.ForeColor = Color.Black;
+                    ButtonClear.BackColor = Color.Pink;
+                    ButtonClear.ForeColor = Color.Black;
+                    Button0.BackColor = Color.Pink;
+                    Button1.BackColor = Color.Pink;
+                    Button2.BackColor = Color.Pink;
+                    Button3.BackColor = Color.Pink;
+                    Button4.BackColor = Color.Pink;
+                    Button5.BackColor = Color.Pink;
+                    Button6.BackColor = Color.Pink;
+                    Button7.BackColor = Color.Pink;
+                    Button8.BackColor = Color.Pink;
+                    Button9.BackColor = Color.Pink;
+                    ButtonEqual.BackColor = SystemColors.ActiveCaption;
+                    ButtonSubtraction.BackColor = Color.Pink;
+                    ButtonDivision.BackColor = Color.Pink;
+                    ButtonMultiplication.BackColor = Color.Pink;
+                    ButtonNegation.BackColor = Color.Pink;
+                    ButtonAddition.BackColor = Color.Pink;
+                    ButtonComma.BackColor = Color.Pink;
+                    ButtonExponentiation.BackColor = Color.Pink;
+                    #endregion coloring normal buttons
+                    #region button font                   
+                    ButtonCancel.Font = CatFontButton;
+                    ButtonCancel.Font = CatFontButton;
+                    ButtonClear.Font = CatFontButton;
+                    ButtonClear.Font = CatFontButton;
+                    Button0.Font = CatFontButton;
+                    Button1.Font = CatFontButton;
+                    Button2.Font = CatFontButton;
+                    Button3.Font = CatFontButton;
+                    Button4.Font = CatFontButton;
+                    Button5.Font = CatFontButton;
+                    Button6.Font = CatFontButton;
+                    Button7.Font = CatFontButton;
+                    Button8.Font = CatFontButton;
+                    Button9.Font = CatFontButton;
+                    ButtonEqual.Font = CatFontButton;
+                    ButtonSubtraction.Font = CatFontButton;
+                    ButtonDivision.Font = CatFontButton;
+                    ButtonMultiplication.Font = CatFontButton;
+                    ButtonNegation.Font = CatFontButton;
+                    ButtonAddition.Font = CatFontButton;
+                    ButtonComma.Font = CatFontButton;
+                    ButtonExponentiation.Font = CatFontButton;
+                    #endregion button font
+                    break;
+                case "Digital": //digital skin 
+
+                    this.BackColor = SystemColors.ControlDarkDark;
+                    Clock.ForeColor = Color.White;
+                    Clock.Font = DigitalFontBig;
+
+                    ButtonCancel.BackColor = Color.Red;
+                    ButtonCancel.ForeColor = Color.White;
+                    ButtonClear.BackColor = Color.Red;
+                    ButtonClear.ForeColor = Color.White;
+
+                    Display.Font = DigitalFont;
+                    Display.ForeColor = Color.Green;
+                    Display.BackColor = Color.Black;
+
+                    ResultDisplay.ForeColor = Color.Green;
+                    ResultDisplay.BackColor = Color.Black;
+                    ResultDisplay.Font = DigitalFontSmall;
+
+                    CatPic.Visible = false;
+
+                    #region coloring normal buttons
+                    Button0.BackColor = Color.DarkGray;
+                    Button1.BackColor = Color.DarkGray;
+                    Button2.BackColor = Color.DarkGray;
+                    Button3.BackColor = Color.DarkGray;
+                    Button4.BackColor = Color.DarkGray;
+                    Button5.BackColor = Color.DarkGray;
+                    Button6.BackColor = Color.DarkGray;
+                    Button7.BackColor = Color.DarkGray;
+                    Button8.BackColor = Color.DarkGray;
+                    Button9.BackColor = Color.DarkGray;
+                    ButtonEqual.BackColor = Color.DarkGray;
+                    ButtonSubtraction.BackColor = Color.DarkGray;
+                    ButtonDivision.BackColor = Color.DarkGray;
+                    ButtonMultiplication.BackColor = Color.DarkGray;
+                    ButtonNegation.BackColor = Color.DarkGray;
+                    ButtonAddition.BackColor = Color.DarkGray;
+                    ButtonComma.BackColor = Color.DarkGray;
+                    ButtonExponentiation.BackColor = Color.DarkGray;
+                    #endregion coloring normal buttons
+                    #region button font                   
+                    ButtonCancel.Font = NormalFontButton;
+                    ButtonCancel.Font = NormalFontButton;
+                    ButtonClear.Font = NormalFontButton;
+                    ButtonClear.Font = NormalFontButton;
+                    Button0.Font = NormalFontButton;
+                    Button1.Font = NormalFontButton;
+                    Button2.Font = NormalFontButton;
+                    Button3.Font = NormalFontButton;
+                    Button4.Font = NormalFontButton;
+                    Button5.Font = NormalFontButton;
+                    Button6.Font = NormalFontButton;
+                    Button7.Font = NormalFontButton;
+                    Button8.Font = NormalFontButton;
+                    Button9.Font = NormalFontButton;
+                    ButtonEqual.Font = NormalFontButton;
+                    ButtonSubtraction.Font = NormalFontButton;
+                    ButtonDivision.Font = NormalFontButton;
+                    ButtonMultiplication.Font = NormalFontButton;
+                    ButtonNegation.Font = NormalFontButton;
+                    ButtonAddition.Font = NormalFontButton;
+                    ButtonComma.Font = NormalFontButton;
+                    ButtonExponentiation.Font = NormalFontButton;
+                    #endregion button font
+                    break;
+
+            }
+        }
     }
 }
