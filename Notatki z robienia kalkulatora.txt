@@ -15,3 +15,6 @@ Przyciski zorientowane na dolny prawy róg.
 Wciskanie znaku "=" nie będize powodować ponawiania się ostatniego działania. (można to łatwo zrobić ale to 
 będzie komplikować jeszcze kod, a i tak już jest go sporo).
 Czy pierwszy przecinek ma generować "," czy "0,"?
+
+Backend.EnterDigit:
+startedNewCycle - zmienna lokalna metody enterdigit

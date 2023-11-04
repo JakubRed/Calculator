@@ -720,7 +720,7 @@
     <value>6</value>
   </data>
   <data name="Clock.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 30pt</value>
+    <value>Segoe UI, 32.25pt</value>
   </data>
   <data name="Clock.Location" type="System.Drawing.Point, System.Drawing">
     <value>110, 59</value>

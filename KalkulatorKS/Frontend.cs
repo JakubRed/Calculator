@@ -45,10 +45,6 @@ namespace KalkulatorKS
         Bitmap bmp;
         Graphics AnalogClockLook;
 
-        private void button10_Click(object sender, EventArgs e)
-        {
-            isDigitalClockVisible = !isDigitalClockVisible;
-        }
         private void AnalogClock_Click(object sender, EventArgs e)
         {
             isDigitalClockVisible = !isDigitalClockVisible;
@@ -108,7 +104,7 @@ namespace KalkulatorKS
             if (!isDigitalClockVisible) //digital clock
             {
                 Clock.BackColor = this.BackColor;
-                Clock.Text = DateTime.Now.ToString("H:m:ss"); //24-hour format 
+                Clock.Text = DateTime.Now.ToString("H:mm:ss"); //24-hour format 
                 AnalogClock.Visible = false;
                 Clock.Visible = true;
             }
@@ -314,7 +310,7 @@ namespace KalkulatorKS
 
         private void enterOperator(char enteredOperator)
         {
-            Backend.EnterOperator(enteredOperator);
+            Backend. (enteredOperator);
             ResultDisplay.Text = Convert.ToString(Backend.ShowFormerResult()) + " " + Char.ToString(Backend.ShowOperator());
         }
 

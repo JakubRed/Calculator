@@ -2,9 +2,9 @@
 {
     static class Backend
     {
-        static double result = 87; //random easily recognizable number
+        static double result = 0; //random easily recognizable number
         static string number = "";
-        static double formerResult = 88; //random easily recognizable number
+        static double formerResult = 0; //random easily recognizable number
         static char equationOperator;
         static bool formerResultEmpty = true;
         static bool newCycle = true;
