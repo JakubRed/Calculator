@@ -6,24 +6,22 @@ namespace KalkulatorKS
 {
     public partial class Frontend : Form
     {
-        #region AnalogClock
-
-        bool isDigitalClockVisible = true; //true - digital clock visible, false - analog clock visible
-        int WIDTH = 200, HEIGHT = 200, SEC_HAND = 94, MIN_HAND = 66, HR_HAND = 54;
-
+        #region skin fonts
         Font NormalFontBig = new Font("Segoe UI", 40); //font for skin - Default
-        Font NormalFont = new Font("Segoe UI", 24); 
-        Font NormalFontSmall = new Font("Segoe UI", 12); 
+        Font NormalFont = new Font("Segoe UI", 24);
+        Font NormalFontSmall = new Font("Segoe UI", 12);
         Font NormalFontButton = new Font("Segoe UI", 20); //font for skin - Default and Digital
 
         Font CatFontBig = new Font("Tempus Sans ITC", 40); //font for skin - Cat
-        Font CatFont = new Font("Tempus Sans ITC", 24); 
-        Font CatFontSmall = new Font("Tempus Sans ITC", 18); 
-        Font CatFontButton = new Font("Tempus Sans ITC", 20); 
+        Font CatFont = new Font("Tempus Sans ITC", 24);
+        Font CatFontSmall = new Font("Tempus Sans ITC", 18);
+        Font CatFontButton = new Font("Tempus Sans ITC", 20);
 
         Font DigitalFontBig = new Font("Digital-7", 40); //font for skin - Digital
-        Font DigitalFont = new Font("Digital-7", 24); 
-        Font DigitalFontSmall = new Font("Digital-7", 18); 
+        Font DigitalFont = new Font("Digital-7", 24);
+        Font DigitalFontSmall = new Font("Digital-7", 18);
+        #endregion skin fonts
+
         private void Frontend_Load(object sender, EventArgs e)
         {
             timer1.Start(); //for clocks
@@ -35,9 +33,12 @@ namespace KalkulatorKS
             //center
             cx = WIDTH / 2;
             cy = HEIGHT / 2;
-
-            //coordinates for minute and second hand
         }
+        #region AnalogClock
+
+        bool isDigitalClockVisible = true; //true - digital clock visible, false - analog clock visible
+        int WIDTH = 200, HEIGHT = 200, SEC_HAND = 94, MIN_HAND = 66, HR_HAND = 54;
+
         //center 
         int cx, cy;
         Bitmap bmp;
@@ -55,7 +56,6 @@ namespace KalkulatorKS
         {
             isDigitalClockVisible = !isDigitalClockVisible;
         }
-        #endregion AnalogClock
 
         private int[] msCoord(int val, int hlen)
         {
@@ -128,7 +128,6 @@ namespace KalkulatorKS
                 //AnalogClockLook.DrawString("6", new Font("Arial", 12), Brushes.Black, new PointF(90, 180));
                 //AnalogClockLook.DrawString("9", new Font("Arial", 12), Brushes.Black, new PointF(0, 88));
 
-
                 //lines
                 AnalogClockLook.DrawString("|", new Font("Arial", 12), Brushes.Black, new PointF(95, 0));
                 AnalogClockLook.DrawString("—", new Font("Arial", 12), Brushes.Black, new PointF(178, 90));
@@ -154,15 +153,7 @@ namespace KalkulatorKS
                 AnalogClockLook.Dispose();
             }
         }
-        //coordinates for hour hand
-        #region DigitalClock
-        private void Operator_Click(object sender, EventArgs e)
-        //probably to be removed
-        {
-
-        }
-
-        #endregion DigitalClock
+        #endregion AnalogClock
 
         public Frontend()
         {
@@ -277,13 +268,13 @@ namespace KalkulatorKS
                         Backend.CircleOfLife();
                         break;
                     case -1:
-                        //add sth
+                        //add sth if needed
                         break;
                     case -2:
                         Display.Text = "Nie można dzielić przez 0";
                         break;
                     default:
-                        //add sth
+                        //add sth if needed
                         break;
                 }
             }
@@ -311,10 +302,6 @@ namespace KalkulatorKS
 
         }
         #endregion Other buttons
-        private void Skin_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void enterDigit(string digit)
         {
@@ -394,12 +381,15 @@ namespace KalkulatorKS
                 case Keys.Oemplus:
                     if (Control.ModifierKeys == Keys.Shift)
                     {
-                        ButtonEqual.PerformClick();
+                        ButtonAddition.PerformClick();
                     }
                     else
                     {
-                        ButtonAddition.PerformClick();
+                        ButtonEqual.PerformClick();
                     }
+                    break;
+                case Keys.Enter:
+                    ButtonEqual.PerformClick();
                     break;
                 case Keys.OemQuestion:
                     ButtonDivision.PerformClick();
@@ -414,6 +404,7 @@ namespace KalkulatorKS
             }
         }
 
+        //diferent skin options
         private void SKIN_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (Skin.Items[Skin.SelectedIndex])
@@ -607,7 +598,6 @@ namespace KalkulatorKS
                     ButtonExponentiation.Font = NormalFontButton;
                     #endregion button font
                     break;
-
             }
         }
     }

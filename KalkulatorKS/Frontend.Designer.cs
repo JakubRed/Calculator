@@ -221,7 +221,6 @@
             ResultDisplay.BackColor = Color.Silver;
             resources.ApplyResources(ResultDisplay, "ResultDisplay");
             ResultDisplay.Name = "ResultDisplay";
-            ResultDisplay.Click += Operator_Click;
             // 
             // timer1
             // 
