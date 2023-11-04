@@ -98,9 +98,12 @@ namespace KalkulatorKS
             {
                 Clock.Text = DateTime.Now.ToString("hh:mm:ss");
                 AnalogClock.Visible = false;
+                Clock.Visible = true;
             }
             else //analog clock
             {
+                AnalogClock.Visible = true;
+                Clock.Visible = false;
                 //clear
                 g.Clear(Color.LightGray);
 
