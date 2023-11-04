@@ -7,12 +7,12 @@ namespace KalkulatorKS
     public partial class Frontend : Form
     {
         #region skin fonts
-        Font NormalFontBig = new Font("Segoe UI", 40); //font for skin - Default
+        Font NormalFontBig = new Font("Segoe UI", 32); //font for skin - Default
         Font NormalFont = new Font("Segoe UI", 24);
         Font NormalFontSmall = new Font("Segoe UI", 12);
         Font NormalFontButton = new Font("Segoe UI", 20); //font for skin - Default and Digital
 
-        Font CatFontBig = new Font("Tempus Sans ITC", 40); //font for skin - Cat
+        Font CatFontBig = new Font("Tempus Sans ITC", 32); //font for skin - Cat
         Font CatFont = new Font("Tempus Sans ITC", 24);
         Font CatFontSmall = new Font("Tempus Sans ITC", 18);
         Font CatFontButton = new Font("Tempus Sans ITC", 20);
@@ -26,6 +26,7 @@ namespace KalkulatorKS
         {
             timer1.Start(); //for clocks
             CatPic.Visible = false;
+            JackRubberDuck.Visible = false;
 
             //for analog clock
             //create bitmap
@@ -44,10 +45,6 @@ namespace KalkulatorKS
         Bitmap bmp;
         Graphics AnalogClockLook;
 
-        private void button10_Click(object sender, EventArgs e)
-        {
-            isDigitalClockVisible = !isDigitalClockVisible;
-        }
         private void AnalogClock_Click(object sender, EventArgs e)
         {
             isDigitalClockVisible = !isDigitalClockVisible;
@@ -107,7 +104,7 @@ namespace KalkulatorKS
             if (!isDigitalClockVisible) //digital clock
             {
                 Clock.BackColor = this.BackColor;
-                Clock.Text = DateTime.Now.ToString("H:m:s"); //24-hour format 
+                Clock.Text = DateTime.Now.ToString("H:mm:ss"); //24-hour format 
                 AnalogClock.Visible = false;
                 Clock.Visible = true;
             }
@@ -271,7 +268,7 @@ namespace KalkulatorKS
                         //add sth if needed
                         break;
                     case -2:
-                        Display.Text = "Nie można dzielić przez 0";
+                        Display.Text = "Cannot divide by 0";
                         break;
                     default:
                         //add sth if needed
@@ -288,8 +285,7 @@ namespace KalkulatorKS
             }
             else
             {
-                Backend.TabulaRasa();
-                ResultDisplay.Text = "";
+                ButtonClear.PerformClick();
             }
             Display.Text = Backend.CurrentDisplay();
         }
@@ -297,8 +293,8 @@ namespace KalkulatorKS
         private void ButtonClear_Click(object sender, EventArgs e)
         {
             Backend.TabulaRasa();
-            Display.Text = Backend.CurrentDisplay();
-            ResultDisplay.Text = Char.ToString((Backend.ShowOperator()));
+            Display.Text = Backend.CurrentDisplay(); //if cleaning function does not work, this will not be empty (error check)
+            ResultDisplay.Text = Char.ToString((Backend.ShowOperator())); //if cleaning function does not work, this will not be empty (error check)
 
         }
         #endregion Other buttons
@@ -314,7 +310,7 @@ namespace KalkulatorKS
 
         private void enterOperator(char enteredOperator)
         {
-            Backend.EnterOperator(enteredOperator);
+            Backend. (enteredOperator);
             ResultDisplay.Text = Convert.ToString(Backend.ShowFormerResult()) + " " + Char.ToString(Backend.ShowOperator());
         }
 
@@ -422,6 +418,7 @@ namespace KalkulatorKS
                     ResultDisplay.BackColor = Color.Silver;
                     ResultDisplay.Font = NormalFontSmall;
                     CatPic.Visible = false;
+                    JackRubberDuck.Visible = false;
 
                     #region coloring normal buttons
                     ButtonCancel.BackColor = Color.LightGray;
@@ -481,8 +478,10 @@ namespace KalkulatorKS
                     Clock.Font = CatFontBig;
                     Display.Font = CatFont;
                     ResultDisplay.Font = CatFontSmall;
-
+                    Display.ForeColor = Color.Black;
+                    ResultDisplay.ForeColor = Color.Black;
                     CatPic.Visible = true;
+                    JackRubberDuck.Visible = false;
                     #region coloring normal buttons
                     ButtonCancel.BackColor = Color.Pink;
                     ButtonCancel.ForeColor = Color.Black;
@@ -530,7 +529,7 @@ namespace KalkulatorKS
                     ButtonAddition.Font = CatFontButton;
                     ButtonComma.Font = CatFontButton;
                     ButtonExponentiation.Font = CatFontButton;
-                    #endregion button font
+                    #endregion button font 
                     break;
                 case "Digital": //digital skin 
 
@@ -552,6 +551,7 @@ namespace KalkulatorKS
                     ResultDisplay.Font = DigitalFontSmall;
 
                     CatPic.Visible = false;
+                    JackRubberDuck.Visible = true;
 
                     #region coloring normal buttons
                     Button0.BackColor = Color.DarkGray;
@@ -600,5 +600,16 @@ namespace KalkulatorKS
                     break;
             }
         }
+        #region easterEgg
+        private void CatPic_Click(object sender, EventArgs e)
+        {
+            Display.Text = "MEOOOW";
+        }
+        private void JackRubberDuck_Click(object sender, EventArgs e)
+        {
+            Display.Text = "QUUUUACK";
+        }
+        #endregion
+
     }
 }
