@@ -57,8 +57,10 @@
             AnalogClock = new PictureBox();
             Skin = new ListBox();
             CatPic = new PictureBox();
+            JackRubberDuck = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)AnalogClock).BeginInit();
             ((System.ComponentModel.ISupportInitialize)CatPic).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)JackRubberDuck).BeginInit();
             SuspendLayout();
             // 
             // Button1
@@ -248,12 +250,21 @@
             resources.ApplyResources(CatPic, "CatPic");
             CatPic.Name = "CatPic";
             CatPic.TabStop = false;
+            CatPic.Click += CatPic_Click;
+            // 
+            // JackRubberDuck
+            // 
+            resources.ApplyResources(JackRubberDuck, "JackRubberDuck");
+            JackRubberDuck.Name = "JackRubberDuck";
+            JackRubberDuck.TabStop = false;
+            JackRubberDuck.Click += JackRubberDuck_Click;
             // 
             // Frontend
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
+            Controls.Add(JackRubberDuck);
             Controls.Add(CatPic);
             Controls.Add(Skin);
             Controls.Add(AnalogClock);
@@ -288,6 +299,7 @@
             KeyDown += Frontend_KeyDown;
             ((System.ComponentModel.ISupportInitialize)AnalogClock).EndInit();
             ((System.ComponentModel.ISupportInitialize)CatPic).EndInit();
+            ((System.ComponentModel.ISupportInitialize)JackRubberDuck).EndInit();
             ResumeLayout(false);
         }
 
@@ -319,5 +331,6 @@
         private PictureBox AnalogClock;
         private ListBox Skin;
         private PictureBox CatPic;
+        private PictureBox JackRubberDuck;
     }
 }

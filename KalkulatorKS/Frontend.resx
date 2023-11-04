@@ -145,7 +145,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Button1.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>25</value>
   </data>
   <data name="Button2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 20pt</value>
@@ -176,7 +176,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Button2.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>24</value>
   </data>
   <data name="Button3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 20pt</value>
@@ -206,7 +206,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Button3.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>23</value>
   </data>
   <data name="Button4.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 20pt</value>
@@ -236,7 +236,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Button4.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>22</value>
   </data>
   <data name="Button5.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 20pt</value>
@@ -266,7 +266,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Button5.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="Button6.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 20pt</value>
@@ -296,7 +296,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Button6.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="Button7.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 20pt</value>
@@ -326,7 +326,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Button7.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="Button8.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 20pt</value>
@@ -356,7 +356,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Button8.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="Button9.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 20pt</value>
@@ -386,7 +386,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Button9.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="Display.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 24.75pt</value>
@@ -413,7 +413,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Display.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="ButtonAddition.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 20pt</value>
@@ -447,7 +447,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ButtonAddition.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="ButtonSubtraction.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 20pt</value>
@@ -477,7 +477,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ButtonSubtraction.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="ButtonMultiplication.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 20pt</value>
@@ -507,7 +507,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ButtonMultiplication.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="ButtonDivision.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 20pt</value>
@@ -537,7 +537,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ButtonDivision.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="ButtonNegation.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 20pt</value>
@@ -567,7 +567,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ButtonNegation.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="ButtonEqual.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 20pt</value>
@@ -597,7 +597,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ButtonEqual.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="ButtonComma.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 20pt</value>
@@ -627,7 +627,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ButtonComma.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="ButtonExponentiation.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 20pt</value>
@@ -645,7 +645,7 @@
     <value>19</value>
   </data>
   <data name="ButtonExponentiation.Text" xml:space="preserve">
-    <value>2ᵡ</value>
+    <value>^</value>
   </data>
   <data name="&gt;&gt;ButtonExponentiation.Name" xml:space="preserve">
     <value>ButtonExponentiation</value>
@@ -657,7 +657,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ButtonExponentiation.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="ButtonCancel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 20pt</value>
@@ -687,7 +687,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ButtonCancel.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="ButtonClear.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 20pt</value>
@@ -717,13 +717,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ButtonClear.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="Clock.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 30pt</value>
   </data>
   <data name="Clock.Location" type="System.Drawing.Point, System.Drawing">
-    <value>118, 54</value>
+    <value>110, 59</value>
   </data>
   <data name="Clock.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 100</value>
@@ -747,7 +747,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Clock.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="Button0.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 20pt</value>
@@ -777,7 +777,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Button0.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>26</value>
   </data>
   <data name="ResultDisplay.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
@@ -807,7 +807,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ResultDisplay.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -831,7 +831,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;AnalogClock.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="Skin.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 15pt</value>
@@ -870,7 +870,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Skin.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="CatPic.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -968,6 +968,92 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;CatPic.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="JackRubberDuck.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        /9j/4AAQSkZJRgABAQEAYABgAAD/4QAiRXhpZgAATU0AKgAAAAgAAQESAAMAAAABAAEAAAAAAAD/2wBD
+        AAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgsMDAwMBwkODw0M
+        DgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwM
+        DAwMDAwMDAwMDAwMDAz/wAARCABHADkDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQF
+        BgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAk
+        M2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWG
+        h4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx
+        8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQA
+        AQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5
+        OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmq
+        srO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDy
+        Ouc8T+OFtvEP9gafNCurLpl1rl/cy281xa+HNJtUaS61S8WEFxbxKpCoMPPKUhQ7n3LU+JHxj03wBPFp
+        cKza54u1KNv7H8OadFJdanq02yQxxxwQo8m12jZfM2bQRye1fI/7XPxa8VaR4Tm+Dttq2l+MvH3xD1Gx
+        1jxtN4Vvrm9htZIfNXTvC0KxO1tcR2jTPcStEJQ91cqm9ntPMl+fzzMp00sFhJJV6mz0fJD7VWSfSK2v
+        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
+        /9k=
+</value>
+  </data>
+  <data name="JackRubberDuck.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 138</value>
+  </data>
+  <data name="JackRubberDuck.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 71</value>
+  </data>
+  <data name="JackRubberDuck.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;JackRubberDuck.Name" xml:space="preserve">
+    <value>JackRubberDuck</value>
+  </data>
+  <data name="&gt;&gt;JackRubberDuck.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;JackRubberDuck.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;JackRubberDuck.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
