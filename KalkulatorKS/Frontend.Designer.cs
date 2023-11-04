@@ -55,6 +55,9 @@
             Button0 = new Button();
             ResultDisplay = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
+            AnalogClock = new PictureBox();
+            button10 = new Button();
+            ((System.ComponentModel.ISupportInitialize)AnalogClock).BeginInit();
             SuspendLayout();
             // 
             // Button1
@@ -230,11 +233,28 @@
             // 
             timer1.Tick += timer1_Tick;
             // 
+            // AnalogClock
+            // 
+            AnalogClock.BackColor = Color.LightGray;
+            resources.ApplyResources(AnalogClock, "AnalogClock");
+            AnalogClock.Name = "AnalogClock";
+            AnalogClock.TabStop = false;
+            AnalogClock.Click += AnalogClock_Click;
+            // 
+            // button10
+            // 
+            resources.ApplyResources(button10, "button10");
+            button10.Name = "button10";
+            button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click;
+            // 
             // Frontend
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlDark;
+            BackColor = Color.LightGray;
+            Controls.Add(button10);
+            Controls.Add(AnalogClock);
             Controls.Add(ResultDisplay);
             Controls.Add(Skin);
             Controls.Add(Clock);
@@ -265,6 +285,7 @@
             Name = "Frontend";
             Load += Frontend_Load;
             KeyDown += Frontend_KeyDown;
+            ((System.ComponentModel.ISupportInitialize)AnalogClock).EndInit();
             ResumeLayout(false);
         }
 
@@ -294,5 +315,7 @@
         private Button Button0;
         private Label ResultDisplay;
         private System.Windows.Forms.Timer timer1;
+        private PictureBox AnalogClock;
+        private Button button10;
     }
 }
