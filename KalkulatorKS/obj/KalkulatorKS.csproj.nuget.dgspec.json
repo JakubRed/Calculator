@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kasia\\source\\repos\\Calculator\\KalkulatorKS\\KalkulatorKS.csproj": {}
+    "C:\\Users\\Kasia\\Source\\Repos\\Calculator\\KalkulatorKS\\KalkulatorKS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kasia\\source\\repos\\Calculator\\KalkulatorKS\\KalkulatorKS.csproj": {
+    "C:\\Users\\Kasia\\Source\\Repos\\Calculator\\KalkulatorKS\\KalkulatorKS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kasia\\source\\repos\\Calculator\\KalkulatorKS\\KalkulatorKS.csproj",
+        "projectUniqueName": "C:\\Users\\Kasia\\Source\\Repos\\Calculator\\KalkulatorKS\\KalkulatorKS.csproj",
         "projectName": "KalkulatorKS",
-        "projectPath": "C:\\Users\\Kasia\\source\\repos\\Calculator\\KalkulatorKS\\KalkulatorKS.csproj",
+        "projectPath": "C:\\Users\\Kasia\\Source\\Repos\\Calculator\\KalkulatorKS\\KalkulatorKS.csproj",
         "packagesPath": "C:\\Users\\Kasia\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Kasia\\Source\\Repos\\Calculator\\KalkulatorKS\\obj\\",
         "projectStyle": "PackageReference",

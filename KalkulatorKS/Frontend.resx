@@ -645,7 +645,7 @@
     <value>19</value>
   </data>
   <data name="ButtonExponentiation.Text" xml:space="preserve">
-    <value>2ᵡ</value>
+    <value>^</value>
   </data>
   <data name="&gt;&gt;ButtonExponentiation.Name" xml:space="preserve">
     <value>ButtonExponentiation</value>
