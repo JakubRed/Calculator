@@ -1,7 +1,9 @@
 MÓJ VS2022 UZYWA PRZECINKÓW ZAMIAST KROPEK! TRZEBA UWAŻAĆ PRZY PRZENOSZENIU!
 
 Tutoriale:
-https://www.youtube.com/watch?v=5Dm8kXii7zU
+https://www.youtube.com/watch?v=5Dm8kXii7zU - start
+https://www.youtube.com/watch?v=sR7wTNR5asA&ab_channel=DearProgrammer - cyfrowy zegar
+https://www.youtube.com/watch?v=0dtbGKSF1R8&ab_channel=YusufShakeel - analogowy zegar
 
 Kalkulator chamsko wzorowany na kalkulatorze z windowsa oraz z kalkulatora mojej mamy ;)
 'Button0'powstał oryginalnie jako 'Butto10' więc był ostatni stworzony, potem przeniesiony
