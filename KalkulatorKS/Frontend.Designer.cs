@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frontend));
             Button1 = new Button();
             Button2 = new Button();
@@ -53,6 +54,9 @@
             Skin = new Label();
             Button0 = new Button();
             ResultDisplay = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
+            AnalogClock = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)AnalogClock).BeginInit();
             SuspendLayout();
             // 
             // Button1
@@ -198,7 +202,7 @@
             // 
             // Clock
             // 
-            Clock.BackColor = SystemColors.Control;
+            Clock.BackColor = Color.LightGray;
             resources.ApplyResources(Clock, "Clock");
             Clock.Name = "Clock";
             Clock.Click += Clock_Click;
@@ -224,11 +228,24 @@
             ResultDisplay.Name = "ResultDisplay";
             ResultDisplay.Click += Operator_Click;
             // 
+            // timer1
+            // 
+            timer1.Tick += timer1_Tick;
+            // 
+            // AnalogClock
+            // 
+            AnalogClock.BackColor = Color.LightGray;
+            resources.ApplyResources(AnalogClock, "AnalogClock");
+            AnalogClock.Name = "AnalogClock";
+            AnalogClock.TabStop = false;
+            AnalogClock.Click += AnalogClock_Click;
+            // 
             // Frontend
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlDark;
+            BackColor = Color.LightGray;
+            Controls.Add(AnalogClock);
             Controls.Add(ResultDisplay);
             Controls.Add(Skin);
             Controls.Add(Clock);
@@ -259,6 +276,7 @@
             Name = "Frontend";
             Load += Frontend_Load;
             KeyDown += Frontend_KeyDown;
+            ((System.ComponentModel.ISupportInitialize)AnalogClock).EndInit();
             ResumeLayout(false);
         }
 
@@ -287,5 +305,7 @@
         private Label Skin;
         private Button Button0;
         private Label ResultDisplay;
+        private System.Windows.Forms.Timer timer1;
+        private PictureBox AnalogClock;
     }
 }

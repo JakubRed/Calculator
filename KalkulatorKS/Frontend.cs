@@ -1,9 +1,157 @@
+using System.Drawing.Text;
+using System.Net.Http.Headers;
 using System.Windows.Forms;
 
 namespace KalkulatorKS
 {
     public partial class Frontend : Form
     {
+        #region AnalogClock
+
+        bool isDigitalClockVisible = true; //true - digital clock visible, false - analog clock visible
+        int WIDTH = 200, HEIGHT = 200, SEC_HAND = 94, MIN_HAND = 66, HR_HAND = 54;
+
+        //center 
+        int cx, cy;
+        Bitmap bmp;
+        Graphics g;
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            isDigitalClockVisible = !isDigitalClockVisible;
+        }
+        private void AnalogClock_Click(object sender, EventArgs e)
+        {
+            isDigitalClockVisible = !isDigitalClockVisible;
+        }
+        private void Clock_Click(object sender, EventArgs e)
+        {
+            isDigitalClockVisible = !isDigitalClockVisible;
+        }
+        #endregion AnalogClock
+        private void Frontend_Load(object sender, EventArgs e)
+        {
+            timer1.Start(); //for clocks
+
+            //for analog clock
+            //create bitmap
+            bmp = new Bitmap(WIDTH + 1, HEIGHT + 1);
+            //center
+            cx = WIDTH / 2;
+            cy = HEIGHT / 2;
+
+            //backcolor
+            AnalogClock.BackColor = Color.White;
+            // tak się to robi dla form this.BackColor = Color.White;
+
+            //coordinates for minute and second hand
+        }
+        private int[] msCoord(int val, int hlen)
+        {
+            int[] coord = new int[2];
+            val *= 6; // each minute and second hands make 6 deegre move
+            if (val >= 0 && val <= 180)
+            {
+                coord[0] = cx + (int)(hlen * Math.Sin(Math.PI * val / 180));
+                coord[1] = cy - (int)(hlen * Math.Cos(Math.PI * val / 180));
+            }
+            else
+            {
+                coord[0] = cx - (int)(hlen * -Math.Sin(Math.PI * val / 180));
+                coord[1] = cy - (int)(hlen * Math.Cos(Math.PI * val / 180));
+            }
+            return coord;
+        }
+        private int[] hrCoord(int hval, int mval, int hlen)
+        {
+            int[] coord = new int[2];
+            // each hour it makes 30 deegre move
+            // each minute it makes 0.5 deegre move
+            int val = (int)((hval * 30) + (mval * 0.5));
+            if (val >= 0 && val <= 180)
+            {
+                coord[0] = cx + (int)(hlen * Math.Sin(Math.PI * val / 180));
+                coord[1] = cy - (int)(hlen * Math.Cos(Math.PI * val / 180));
+            }
+            else
+            {
+                coord[0] = cx - (int)(hlen * -Math.Sin(Math.PI * val / 180));
+                coord[1] = cy - (int)(hlen * Math.Cos(Math.PI * val / 180));
+            }
+            return coord;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //analog clock
+            //create graphics
+            g = Graphics.FromImage(bmp);
+
+            //get time
+            int ss = DateTime.Now.Second;
+            int mm = DateTime.Now.Minute;
+            int hh = DateTime.Now.Hour;
+
+            int[] handCoord = new int[2];
+
+            if (!isDigitalClockVisible) //digital clock
+            {
+                Clock.Text = DateTime.Now.ToString("hh:mm:ss");
+                AnalogClock.Visible = false;
+                Clock.Visible = true;
+            }
+            else //analog clock
+            {
+                AnalogClock.Visible = true;
+                Clock.Visible = false;
+                //clear
+                g.Clear(Color.LightGray);
+
+                //draw circle
+                g.DrawEllipse(new Pen(Color.Black, 1f), 0, 0, WIDTH - 2, HEIGHT - 2);
+
+                //draw figure
+                //numbers
+                //g.DrawString("12", new Font("Arial", 12), Brushes.Black, new PointF(90, 2));
+                //g.DrawString("3", new Font("Arial", 12), Brushes.Black, new PointF(180, 84));
+                //g.DrawString("6", new Font("Arial", 12), Brushes.Black, new PointF(90, 180));
+                //g.DrawString("9", new Font("Arial", 12), Brushes.Black, new PointF(0, 88));
+
+                //lines
+                g.DrawString("|", new Font("Arial", 12), Brushes.Black, new PointF(95, 0));
+                g.DrawString("—", new Font("Arial", 12), Brushes.Black, new PointF(178, 90));
+                g.DrawString("|", new Font("Arial", 12), Brushes.Black, new PointF(95, 178));
+                g.DrawString("—", new Font("Arial", 12), Brushes.Black, new PointF(0, 90));
+
+                //second hand
+                handCoord = msCoord(ss, SEC_HAND);
+                g.DrawLine(new Pen(Color.Black, 2f), new Point(cx, cy), new Point(handCoord[0], handCoord[1]));
+
+                //minut hand
+                handCoord = msCoord(mm, MIN_HAND);
+                g.DrawLine(new Pen(Color.Black, 3f), new Point(cx, cy), new Point(handCoord[0], handCoord[1]));
+
+                //hour hand
+                handCoord = hrCoord(hh % 12, mm, HR_HAND);
+                g.DrawLine(new Pen(Color.Black, 4f), new Point(cx, cy), new Point(handCoord[0], handCoord[1]));
+
+                //load bmp in AnalogClock
+                AnalogClock.Image = bmp;
+
+                //dispose
+                g.Dispose();
+            }
+        }
+        //coordinates for hour hand
+        #region DigitalClock
+        private void Operator_Click(object sender, EventArgs e)
+        //probably to be removed
+        {
+
+        }
+
+        #endregion DigitalClock
+
         public Frontend()
         {
             InitializeComponent();
@@ -157,17 +305,6 @@ namespace KalkulatorKS
 
         }
 
-        private void Operator_Click(object sender, EventArgs e)
-        //probably to be removed
-        {
-
-        }
-
-        private void Clock_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void enterDigit(string digit)
         {
             if (Backend.EnterDigit(digit))
@@ -181,11 +318,6 @@ namespace KalkulatorKS
         {
             Backend.EnterOperator(enteredOperator);
             ResultDisplay.Text = Convert.ToString(Backend.ShowFormerResult()) + " " + Char.ToString(Backend.ShowOperator());
-        }
-
-        private void Frontend_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void Display_Click(object sender, EventArgs e)
@@ -271,5 +403,6 @@ namespace KalkulatorKS
 
             }
         }
+
     }
 }
