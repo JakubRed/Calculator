@@ -1,0 +1,85 @@
+E:\Nauka Programowania\C#\KalkulatorKS\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorKS.exe
+E:\Nauka Programowania\C#\KalkulatorKS\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorKS.deps.json
+E:\Nauka Programowania\C#\KalkulatorKS\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorKS.runtimeconfig.json
+E:\Nauka Programowania\C#\KalkulatorKS\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorKS.dll
+E:\Nauka Programowania\C#\KalkulatorKS\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorKS.pdb
+E:\Nauka Programowania\C#\KalkulatorKS\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.csproj.GenerateResource.cache
+E:\Nauka Programowania\C#\KalkulatorKS\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.GeneratedMSBuildEditorConfig.editorconfig
+E:\Nauka Programowania\C#\KalkulatorKS\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.AssemblyInfoInputs.cache
+E:\Nauka Programowania\C#\KalkulatorKS\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.AssemblyInfo.cs
+E:\Nauka Programowania\C#\KalkulatorKS\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.csproj.CoreCompileInputs.cache
+E:\Nauka Programowania\C#\KalkulatorKS\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.dll
+E:\Nauka Programowania\C#\KalkulatorKS\KalkulatorKS\obj\Debug\net6.0-windows\refint\KalkulatorKS.dll
+E:\Nauka Programowania\C#\KalkulatorKS\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.pdb
+E:\Nauka Programowania\C#\KalkulatorKS\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.genruntimeconfig.cache
+E:\Nauka Programowania\C#\KalkulatorKS\KalkulatorKS\obj\Debug\net6.0-windows\ref\KalkulatorKS.dll
+E:\Nauka Programowania\C#\KalkulatorKS\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.Frontend.resources
+E:\Nauka Programowania\C#\CalculatorKS\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorKS.exe
+E:\Nauka Programowania\C#\CalculatorKS\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorKS.deps.json
+E:\Nauka Programowania\C#\CalculatorKS\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorKS.runtimeconfig.json
+E:\Nauka Programowania\C#\CalculatorKS\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorKS.dll
+E:\Nauka Programowania\C#\CalculatorKS\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorKS.pdb
+E:\Nauka Programowania\C#\CalculatorKS\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.Frontend.resources
+E:\Nauka Programowania\C#\CalculatorKS\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.csproj.GenerateResource.cache
+E:\Nauka Programowania\C#\CalculatorKS\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.GeneratedMSBuildEditorConfig.editorconfig
+E:\Nauka Programowania\C#\CalculatorKS\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.AssemblyInfoInputs.cache
+E:\Nauka Programowania\C#\CalculatorKS\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.AssemblyInfo.cs
+E:\Nauka Programowania\C#\CalculatorKS\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.csproj.CoreCompileInputs.cache
+E:\Nauka Programowania\C#\CalculatorKS\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.dll
+E:\Nauka Programowania\C#\CalculatorKS\KalkulatorKS\obj\Debug\net6.0-windows\refint\KalkulatorKS.dll
+E:\Nauka Programowania\C#\CalculatorKS\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.pdb
+E:\Nauka Programowania\C#\CalculatorKS\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.genruntimeconfig.cache
+E:\Nauka Programowania\C#\CalculatorKS\KalkulatorKS\obj\Debug\net6.0-windows\ref\KalkulatorKS.dll
+C:\Users\jakub\Source\Repos\Calculator\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorKS.exe
+C:\Users\jakub\Source\Repos\Calculator\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorKS.deps.json
+C:\Users\jakub\Source\Repos\Calculator\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorKS.runtimeconfig.json
+C:\Users\jakub\Source\Repos\Calculator\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorKS.dll
+C:\Users\jakub\Source\Repos\Calculator\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorKS.pdb
+C:\Users\jakub\Source\Repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.Frontend.resources
+C:\Users\jakub\Source\Repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.csproj.GenerateResource.cache
+C:\Users\jakub\Source\Repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jakub\Source\Repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.AssemblyInfoInputs.cache
+C:\Users\jakub\Source\Repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.AssemblyInfo.cs
+C:\Users\jakub\Source\Repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.csproj.CoreCompileInputs.cache
+C:\Users\jakub\Source\Repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.dll
+C:\Users\jakub\Source\Repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\refint\KalkulatorKS.dll
+C:\Users\jakub\Source\Repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.pdb
+C:\Users\jakub\Source\Repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.genruntimeconfig.cache
+C:\Users\jakub\Source\Repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\ref\KalkulatorKS.dll
+C:\Users\jakub\source\repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.Properties.Resources.resources
+C:\Users\Kasia\source\repos\Calculator\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorKS.exe
+C:\Users\Kasia\source\repos\Calculator\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorKS.deps.json
+C:\Users\Kasia\source\repos\Calculator\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorKS.runtimeconfig.json
+C:\Users\Kasia\source\repos\Calculator\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorKS.dll
+C:\Users\Kasia\source\repos\Calculator\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorKS.pdb
+C:\Users\Kasia\source\repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.Frontend.resources
+C:\Users\Kasia\source\repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.csproj.GenerateResource.cache
+C:\Users\Kasia\source\repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kasia\source\repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.AssemblyInfoInputs.cache
+C:\Users\Kasia\source\repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.AssemblyInfo.cs
+C:\Users\Kasia\source\repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.csproj.CoreCompileInputs.cache
+C:\Users\Kasia\source\repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.dll
+C:\Users\Kasia\source\repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\refint\KalkulatorKS.dll
+C:\Users\Kasia\source\repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.pdb
+C:\Users\Kasia\source\repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.genruntimeconfig.cache
+C:\Users\Kasia\source\repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\ref\KalkulatorKS.dll
+C:\Users\Kasia\source\repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.Properties.Resources.resources
+C:\Users\Kasia\Source\Repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.Form1.resources
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorKS.exe
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorKS.deps.json
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorKS.runtimeconfig.json
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorKS.dll
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorKS.pdb
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.Properties.Resources.resources
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.csproj.GenerateResource.cache
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.AssemblyInfoInputs.cache
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.AssemblyInfo.cs
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.csproj.CoreCompileInputs.cache
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.dll
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\refint\KalkulatorKS.dll
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.pdb
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.genruntimeconfig.cache
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\ref\KalkulatorKS.dll
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorPOSK.InfoForm.resources
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorPOSK.Frontend.resources

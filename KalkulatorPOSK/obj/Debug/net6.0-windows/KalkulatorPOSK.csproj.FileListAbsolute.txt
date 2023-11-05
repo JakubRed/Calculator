@@ -1,0 +1,36 @@
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorPOSK.InfoForm.resources
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorPOSK.Frontend.resources
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorPOSK.Properties.Resources.resources
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorPOSK.csproj.GenerateResource.cache
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorPOSK.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorPOSK.AssemblyInfoInputs.cache
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorPOSK.AssemblyInfo.cs
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorPOSK.csproj.CoreCompileInputs.cache
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorPOSK.exe
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorPOSK.deps.json
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorPOSK.runtimeconfig.json
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorPOSK.dll
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\bin\Debug\net6.0-windows\KalkulatorPOSK.pdb
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorPOSK.dll
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\refint\KalkulatorPOSK.dll
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorPOSK.pdb
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorPOSK.genruntimeconfig.cache
+C:\Users\Kasia\Desktop\Kalkulator posk\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\ref\KalkulatorPOSK.dll
+C:\Users\Kasia\Desktop\Calculator\KalkulatorPOSK\bin\Debug\net6.0-windows\KalkulatorPOSK.exe
+C:\Users\Kasia\Desktop\Calculator\KalkulatorPOSK\bin\Debug\net6.0-windows\KalkulatorPOSK.deps.json
+C:\Users\Kasia\Desktop\Calculator\KalkulatorPOSK\bin\Debug\net6.0-windows\KalkulatorPOSK.runtimeconfig.json
+C:\Users\Kasia\Desktop\Calculator\KalkulatorPOSK\bin\Debug\net6.0-windows\KalkulatorPOSK.dll
+C:\Users\Kasia\Desktop\Calculator\KalkulatorPOSK\bin\Debug\net6.0-windows\KalkulatorPOSK.pdb
+C:\Users\Kasia\Desktop\Calculator\KalkulatorPOSK\obj\Debug\net6.0-windows\KalkulatorPOSK.InfoForm.resources
+C:\Users\Kasia\Desktop\Calculator\KalkulatorPOSK\obj\Debug\net6.0-windows\KalkulatorPOSK.Frontend.resources
+C:\Users\Kasia\Desktop\Calculator\KalkulatorPOSK\obj\Debug\net6.0-windows\KalkulatorPOSK.Properties.Resources.resources
+C:\Users\Kasia\Desktop\Calculator\KalkulatorPOSK\obj\Debug\net6.0-windows\KalkulatorPOSK.csproj.GenerateResource.cache
+C:\Users\Kasia\Desktop\Calculator\KalkulatorPOSK\obj\Debug\net6.0-windows\KalkulatorPOSK.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kasia\Desktop\Calculator\KalkulatorPOSK\obj\Debug\net6.0-windows\KalkulatorPOSK.AssemblyInfoInputs.cache
+C:\Users\Kasia\Desktop\Calculator\KalkulatorPOSK\obj\Debug\net6.0-windows\KalkulatorPOSK.AssemblyInfo.cs
+C:\Users\Kasia\Desktop\Calculator\KalkulatorPOSK\obj\Debug\net6.0-windows\KalkulatorPOSK.csproj.CoreCompileInputs.cache
+C:\Users\Kasia\Desktop\Calculator\KalkulatorPOSK\obj\Debug\net6.0-windows\KalkulatorPOSK.dll
+C:\Users\Kasia\Desktop\Calculator\KalkulatorPOSK\obj\Debug\net6.0-windows\refint\KalkulatorPOSK.dll
+C:\Users\Kasia\Desktop\Calculator\KalkulatorPOSK\obj\Debug\net6.0-windows\KalkulatorPOSK.pdb
+C:\Users\Kasia\Desktop\Calculator\KalkulatorPOSK\obj\Debug\net6.0-windows\KalkulatorPOSK.genruntimeconfig.cache
+C:\Users\Kasia\Desktop\Calculator\KalkulatorPOSK\obj\Debug\net6.0-windows\ref\KalkulatorPOSK.dll
