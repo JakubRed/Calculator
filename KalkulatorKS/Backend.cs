@@ -1,10 +1,10 @@
-﻿namespace KalkulatorKS
+﻿namespace KalkulatorPOSK
 {
     static class Backend
     {
-        static double result = 0; //random easily recognizable number
+        static double result = 0;
         static string number = "";
-        static double formerResult = 0; //random easily recognizable number
+        static double formerResult = 0;
         static char equationOperator;
         static bool formerResultEmpty = true;
         static bool newCycle = true;
@@ -106,12 +106,9 @@
             return number;
         }
 
-        static public void TabulaRasa(/*bool includeResult*/)
+        static public void TabulaRasa()
         {
-            //if (includeResult)
-            //{
             result = 0;
-            //}
             formerResult = 0;
             formerResultEmpty = true;
             number = "";

@@ -1,4 +1,4 @@
-namespace KalkulatorKS
+namespace KalkulatorPOSK
 {
     internal static class Program
     {

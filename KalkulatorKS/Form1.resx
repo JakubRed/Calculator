@@ -121,11 +121,15 @@
     <value>False</value>
   </metadata>
   <data name="richTextBox1.Text" xml:space="preserve">
-    <value>Tutaj wskazówki co do używania kalkulatora:
+    <value>Wskazówki używania programu:
 
-Można używac operacji mnożenia, dodwania, odejmowania, dzielenia, potęgowania, negacji.
-Można usunąć jednen lub wiele znaków. 
-Można zmienić skórkę na 1 z 3 przygotowanych, lub zmienić kolory poszczególnych elementów samodzielnie.
+Można używać operacji mnożenia (x), dodwania (+), odejmowania (-), dzielenia (/), potęgowania (^), negacji (~). 
+Działania można wprowadzać zarówno myszką, jak i klawiaturą. 
+Kalkulator umożliwia wykonywanie operacji na liczbach zmiennoprzecinkowych (,) i ujemnych.
+Można usunąć jeden na raz (przycisk C) lub wszystkie ze znaków z wyświetlacza (CE). 
+Można zmienić skórkę na 1 z 3 przygotowanych, lub zmienić kolory poszczególnych elementów i dokonać wyboru stylu czcionki samodzielnie (kliknięcie Custom).
+Naciśnięcie zegra zmienia jego rodzaj.
+
 
 </value>
   </data>

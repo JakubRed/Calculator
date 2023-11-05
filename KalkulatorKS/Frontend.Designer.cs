@@ -1,4 +1,4 @@
-﻿namespace KalkulatorKS
+﻿namespace KalkulatorPOSK
 {
     partial class Frontend
     {
@@ -132,7 +132,6 @@
             Display.BackColor = SystemColors.Control;
             resources.ApplyResources(Display, "Display");
             Display.Name = "Display";
-            Display.Click += Display_Click;
             // 
             // ButtonAddition
             // 
@@ -248,6 +247,7 @@
             // 
             // CatPic
             // 
+            CatPic.Image = Properties.Resources.SmallCat;
             resources.ApplyResources(CatPic, "CatPic");
             CatPic.Name = "CatPic";
             CatPic.TabStop = false;
@@ -255,6 +255,7 @@
             // 
             // JackRubberDuck
             // 
+            JackRubberDuck.Image = Properties.Resources.JackRubberDuck;
             resources.ApplyResources(JackRubberDuck, "JackRubberDuck");
             JackRubberDuck.Name = "JackRubberDuck";
             JackRubberDuck.TabStop = false;
@@ -266,7 +267,7 @@
             resources.ApplyResources(button10, "button10");
             button10.Name = "button10";
             button10.UseVisualStyleBackColor = false;
-            button10.Click += button10_Click;
+            button10.Click += ButtonInfo_Click;
             // 
             // Frontend
             // 

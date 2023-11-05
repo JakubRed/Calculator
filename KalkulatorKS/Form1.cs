@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace KalkulatorKS
+namespace KalkulatorPOSK
 {
-    public partial class Form1 : Form
+    public partial class InfoForm : Form
     {
-        public Form1()
+        public InfoForm()
         {
             InitializeComponent();
         }

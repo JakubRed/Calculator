@@ -1,6 +1,6 @@
-﻿namespace KalkulatorKS
+﻿namespace KalkulatorPOSK
 {
-    partial class Form1
+    partial class InfoForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             RichTextBox richTextBox1;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfoForm));
             richTextBox1 = new RichTextBox();
             SuspendLayout();
             // 

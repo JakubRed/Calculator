@@ -2,11 +2,14 @@ using System.Drawing.Text;
 using System.Net.Http.Headers;
 using System.Windows.Forms;
 
-namespace KalkulatorKS
+namespace KalkulatorPOSK
 {
     public partial class Frontend : Form
     {
-        #region skin fonts
+
+        ColorDialog colorDialogCustom = new ColorDialog();
+        FontDialog fontDialogCustom = new FontDialog();
+        #region skin fonts definition
         Font NormalFontBig = new Font("Segoe UI", 32); //font for skin - Default
         Font NormalFont = new Font("Segoe UI", 24);
         Font NormalFontSmall = new Font("Segoe UI", 12);
@@ -20,11 +23,7 @@ namespace KalkulatorKS
         Font DigitalFontBig = new Font("Digital-7", 40); //font for skin - Digital
         Font DigitalFont = new Font("Digital-7", 24);
         Font DigitalFontSmall = new Font("Digital-7", 18);
-        #endregion skin fonts
-        ColorDialog colorDialog1 = new ColorDialog();
-        ColorDialog colorDialogBacground = new ColorDialog();
-        ColorDialog colorDialogClock = new ColorDialog();
-
+        #endregion skin fonts definition
 
         private void Frontend_Load(object sender, EventArgs e)
         {
@@ -319,11 +318,6 @@ namespace KalkulatorKS
             ResultDisplay.Text = Convert.ToString(Backend.ShowFormerResult()) + " " + Char.ToString(Backend.ShowOperator());
         }
 
-        private void Display_Click(object sender, EventArgs e)
-        {
-
-        }
-
         //Keyboard input management
         private void Frontend_KeyDown(object sender, KeyEventArgs e)
         {
@@ -402,12 +396,20 @@ namespace KalkulatorKS
                 case Keys.X:
                     ButtonMultiplication.PerformClick();
                     break;
+                case Keys.Oemtilde:
+                    if (Control.ModifierKeys == Keys.Shift)
+                    {
+                        ButtonNegation.PerformClick();
+                    }
+                    break;
+
             }
         }
 
         //diferent skin options
         private void SKIN_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             switch (Skin.Items[Skin.SelectedIndex])
             {
                 case "Default":
@@ -422,9 +424,10 @@ namespace KalkulatorKS
                     ResultDisplay.ForeColor = Color.Black;
                     ResultDisplay.BackColor = Color.Silver;
                     ResultDisplay.Font = NormalFontSmall;
+
                     CatPic.Visible = false;
                     JackRubberDuck.Visible = false;
-                   
+
                     #region coloring normal buttons
                     ButtonCancel.BackColor = Color.LightGray;
                     ButtonCancel.ForeColor = Color.Black;
@@ -473,9 +476,11 @@ namespace KalkulatorKS
                     ButtonComma.Font = NormalFontButton;
                     ButtonExponentiation.Font = NormalFontButton;
                     #endregion button font
+
                     break;
+
                 case "Cat":
-                    this.BackColor = Color.LightPink;
+                    BackColor = Color.LightPink;
                     Clock.ForeColor = Color.Black;
                     ResultDisplay.BackColor = Color.Pink;
                     Display.BackColor = Color.White;
@@ -485,8 +490,10 @@ namespace KalkulatorKS
                     ResultDisplay.Font = CatFontSmall;
                     Display.ForeColor = Color.Black;
                     ResultDisplay.ForeColor = Color.Black;
+
                     CatPic.Visible = true;
                     JackRubberDuck.Visible = false;
+
                     #region coloring normal buttons
                     ButtonCancel.BackColor = Color.Pink;
                     ButtonCancel.ForeColor = Color.Black;
@@ -535,10 +542,12 @@ namespace KalkulatorKS
                     ButtonComma.Font = CatFontButton;
                     ButtonExponentiation.Font = CatFontButton;
                     #endregion button font 
+
                     break;
+
                 case "Digital": //digital skin 
 
-                    this.BackColor = SystemColors.ControlDarkDark;
+                    BackColor = SystemColors.ControlDarkDark;
                     Clock.ForeColor = Color.White;
                     Clock.Font = DigitalFontBig;
 
@@ -555,7 +564,6 @@ namespace KalkulatorKS
                     ResultDisplay.BackColor = Color.Black;
                     ResultDisplay.Font = DigitalFontSmall;
 
-               
                     CatPic.Visible = false;
                     JackRubberDuck.Visible = true;
 
@@ -603,55 +611,53 @@ namespace KalkulatorKS
                     ButtonComma.Font = NormalFontButton;
                     ButtonExponentiation.Font = NormalFontButton;
                     #endregion button font
+
                     break;
 
                 case "Custom":
-                    FontDialog fontDialogCustomButton = new FontDialog();
 
+                    CatPic.Visible = false;
+                    JackRubberDuck.Visible = false;
 
-                    colorDialog1.ShowDialog();
+                    #region coloring
+                    colorDialogCustom.ShowDialog();
 
                     ButtonCancel.BackColor = Button0.BackColor = ButtonClear.BackColor = ButtonSubtraction.BackColor =
                     Button1.BackColor = Button2.BackColor = Button3.BackColor = Button4.BackColor =
                     Button5.BackColor = Button6.BackColor = Button7.BackColor = Button8.BackColor =
                     Button9.BackColor = ButtonExponentiation.BackColor = ButtonComma.BackColor =
                     ButtonDivision.BackColor = ButtonMultiplication.BackColor = ButtonNegation.BackColor =
-                    ButtonAddition.BackColor = ButtonEqual.BackColor = BackColor = colorDialog1.Color;
+                    ButtonAddition.BackColor = ButtonEqual.BackColor = BackColor = colorDialogCustom.Color;
 
                     Display.BackColor = Color.White;
                     ResultDisplay.BackColor = Color.Silver;
 
-                    fontDialogCustomButton.ShowDialog();
+                    fontDialogCustom.ShowDialog();
+                    #endregion coloring
 
-                    ButtonCancel.ForeColor = Color.Black;
-                    ButtonClear.ForeColor = Color.Black;
-                    CatPic.Visible = false;
-                    JackRubberDuck.Visible = false;
-                    #region button font                   
+                    #region changing font                   
                     ButtonCancel.Font = ButtonCancel.Font = ButtonClear.Font = ButtonClear.Font = Button0.Font = Button1.Font = Button2.Font =
                     Button3.Font = Button4.Font = Button5.Font = Button6.Font = Button7.Font = Button8.Font = Button9.Font =
                     ButtonEqual.Font = ButtonSubtraction.Font = ButtonDivision.Font = ButtonMultiplication.Font = ButtonNegation.Font =
-                    ButtonAddition.Font = ButtonComma.Font = ButtonExponentiation.Font = new Font(fontDialogCustomButton.Font.FontFamily, NormalFontButton.Size); ;
+                    ButtonAddition.Font = ButtonComma.Font = ButtonExponentiation.Font = new Font(fontDialogCustom.Font.FontFamily, NormalFontButton.Size); ;
 
-                 
-                    
-                    Display.Font = new Font(fontDialogCustomButton.Font.FontFamily, NormalFont.Size);
-                    ResultDisplay.Font = new Font(fontDialogCustomButton.Font.FontFamily, NormalFontSmall.Size);
+                    ButtonCancel.ForeColor = Color.Black; //changing to default color
+                    ButtonClear.ForeColor = Color.Black;
 
-               
-
-                    Clock.Font = new Font(fontDialogCustomButton.Font.FontFamily, NormalFontBig.Size-2); //some of font styles are too big to be display fully
+                    Display.Font = new Font(fontDialogCustom.Font.FontFamily, NormalFont.Size);
+                    ResultDisplay.Font = new Font(fontDialogCustom.Font.FontFamily, NormalFontSmall.Size);
                     ResultDisplay.ForeColor = Color.Black;
                     Display.ForeColor = Color.Black;
+
+                    Clock.Font = new Font(fontDialogCustom.Font.FontFamily, NormalFontBig.Size - 2); //some of font styles are too big to be display fully
                     Clock.ForeColor = Color.Black;
 
-                    #endregion button font
-
-
+                    #endregion changing font
 
                     break;
             }
         }
+
         #region easterEgg
         private void CatPic_Click(object sender, EventArgs e)
         {
@@ -663,9 +669,9 @@ namespace KalkulatorKS
         }
         #endregion
 
-        private void button10_Click(object sender, EventArgs e)
+        private void ButtonInfo_Click(object sender, EventArgs e)
         {
-            Form1 OknoInfo = new Form1();
+            InfoForm OknoInfo = new InfoForm();
             OknoInfo.Show();
         }
 
