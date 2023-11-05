@@ -64,3 +64,4 @@ C:\Users\Kasia\source\repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\Kal
 C:\Users\Kasia\source\repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.genruntimeconfig.cache
 C:\Users\Kasia\source\repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\ref\KalkulatorKS.dll
 C:\Users\Kasia\source\repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.Properties.Resources.resources
+C:\Users\Kasia\Source\Repos\Calculator\KalkulatorKS\obj\Debug\net6.0-windows\KalkulatorKS.Form1.resources

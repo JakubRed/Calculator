@@ -58,6 +58,7 @@
             Skin = new ListBox();
             CatPic = new PictureBox();
             JackRubberDuck = new PictureBox();
+            button10 = new Button();
             ((System.ComponentModel.ISupportInitialize)AnalogClock).BeginInit();
             ((System.ComponentModel.ISupportInitialize)CatPic).BeginInit();
             ((System.ComponentModel.ISupportInitialize)JackRubberDuck).BeginInit();
@@ -241,7 +242,7 @@
             Skin.AllowDrop = true;
             resources.ApplyResources(Skin, "Skin");
             Skin.FormattingEnabled = true;
-            Skin.Items.AddRange(new object[] { resources.GetString("Skin.Items"), resources.GetString("Skin.Items1"), resources.GetString("Skin.Items2") });
+            Skin.Items.AddRange(new object[] { resources.GetString("Skin.Items"), resources.GetString("Skin.Items1"), resources.GetString("Skin.Items2"), resources.GetString("Skin.Items3") });
             Skin.Name = "Skin";
             Skin.SelectedIndexChanged += SKIN_SelectedIndexChanged;
             // 
@@ -259,11 +260,20 @@
             JackRubberDuck.TabStop = false;
             JackRubberDuck.Click += JackRubberDuck_Click;
             // 
+            // button10
+            // 
+            button10.BackColor = Color.White;
+            resources.ApplyResources(button10, "button10");
+            button10.Name = "button10";
+            button10.UseVisualStyleBackColor = false;
+            button10.Click += button10_Click;
+            // 
             // Frontend
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
+            Controls.Add(button10);
             Controls.Add(JackRubberDuck);
             Controls.Add(CatPic);
             Controls.Add(Skin);
@@ -332,5 +342,6 @@
         private ListBox Skin;
         private PictureBox CatPic;
         private PictureBox JackRubberDuck;
+        private Button button10;
     }
 }
