@@ -719,34 +719,34 @@
   <data name="&gt;&gt;ButtonClear.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="Clock.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="DigitalClock.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 32.25pt</value>
   </data>
-  <data name="Clock.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="DigitalClock.Location" type="System.Drawing.Point, System.Drawing">
     <value>110, 59</value>
   </data>
-  <data name="Clock.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="DigitalClock.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 100</value>
   </data>
-  <data name="Clock.TabIndex" type="System.Int32, mscorlib">
+  <data name="DigitalClock.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
   </data>
-  <data name="Clock.Text" xml:space="preserve">
+  <data name="DigitalClock.Text" xml:space="preserve">
     <value>00:00:00</value>
   </data>
-  <data name="Clock.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="DigitalClock.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;Clock.Name" xml:space="preserve">
-    <value>Clock</value>
+  <data name="&gt;&gt;DigitalClock.Name" xml:space="preserve">
+    <value>DigitalClock</value>
   </data>
-  <data name="&gt;&gt;Clock.Type" xml:space="preserve">
+  <data name="&gt;&gt;DigitalClock.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Clock.Parent" xml:space="preserve">
+  <data name="&gt;&gt;DigitalClock.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;Clock.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;DigitalClock.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
   <data name="Button0.Font" type="System.Drawing.Font, System.Drawing">

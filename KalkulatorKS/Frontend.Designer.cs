@@ -50,7 +50,7 @@
             ButtonExponentiation = new Button();
             ButtonCancel = new Button();
             ButtonClear = new Button();
-            Clock = new Label();
+            DigitalClock = new Label();
             Button0 = new Button();
             ResultDisplay = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
@@ -204,12 +204,12 @@
             ButtonClear.UseVisualStyleBackColor = true;
             ButtonClear.Click += ButtonClear_Click;
             // 
-            // Clock
+            // DigitalClock
             // 
-            Clock.BackColor = Color.LightGray;
-            resources.ApplyResources(Clock, "Clock");
-            Clock.Name = "Clock";
-            Clock.Click += Clock_Click;
+            DigitalClock.BackColor = Color.LightGray;
+            resources.ApplyResources(DigitalClock, "DigitalClock");
+            DigitalClock.Name = "DigitalClock";
+            DigitalClock.Click += Clock_Click;
             // 
             // Button0
             // 
@@ -280,7 +280,7 @@
             Controls.Add(Skin);
             Controls.Add(AnalogClock);
             Controls.Add(ResultDisplay);
-            Controls.Add(Clock);
+            Controls.Add(DigitalClock);
             Controls.Add(ButtonClear);
             Controls.Add(ButtonCancel);
             Controls.Add(ButtonExponentiation);
@@ -335,7 +335,7 @@
         private Button ButtonExponentiation;
         private Button ButtonCancel;
         private Button ButtonClear;
-        private Label Clock;
+        private Label DigitalClock;
         private Button Button0;
         private Label ResultDisplay;
         private System.Windows.Forms.Timer timer1;

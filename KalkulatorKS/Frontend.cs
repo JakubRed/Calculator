@@ -38,9 +38,9 @@ namespace KalkulatorPOSK
             cx = WIDTH / 2;
             cy = HEIGHT / 2;
         }
-        #region AnalogClock
+        #region Clocks
 
-        bool isDigitalClockVisible = true; //true - digital clock visible, false - analog clock visible
+        bool isAnalogClockVisible = true; //false - digital clock visible, true - analog clock visible
         int WIDTH = 200, HEIGHT = 200, SEC_HAND = 94, MIN_HAND = 66, HR_HAND = 54;
 
         //center 
@@ -51,11 +51,11 @@ namespace KalkulatorPOSK
 
         private void AnalogClock_Click(object sender, EventArgs e)
         {
-            isDigitalClockVisible = !isDigitalClockVisible;
+            isAnalogClockVisible = !isAnalogClockVisible;
         }
         private void Clock_Click(object sender, EventArgs e)
         {
-            isDigitalClockVisible = !isDigitalClockVisible;
+            isAnalogClockVisible = !isAnalogClockVisible;
         }
 
         private int[] msCoord(int val, int hlen)
@@ -105,17 +105,17 @@ namespace KalkulatorPOSK
 
             int[] handCoord = new int[2];
 
-            if (!isDigitalClockVisible) //digital clock
+            if (!isAnalogClockVisible) //digital clock
             {
-                Clock.BackColor = this.BackColor;
-                Clock.Text = DateTime.Now.ToString("H:mm:ss"); //24-hour format 
+                DigitalClock.BackColor = this.BackColor;
+                DigitalClock.Text = DateTime.Now.ToString("H:mm:ss"); //24-hour format 
                 AnalogClock.Visible = false;
-                Clock.Visible = true;
+                DigitalClock.Visible = true;
             }
             else //analog clock
             {
                 AnalogClock.Visible = true;
-                Clock.Visible = false;
+                DigitalClock.Visible = false;
                 //clear
                 AnalogClockLook.Clear(this.BackColor);
 
@@ -154,7 +154,7 @@ namespace KalkulatorPOSK
                 AnalogClockLook.Dispose();
             }
         }
-        #endregion AnalogClock
+        #endregion Clocks
 
         public Frontend()
         {
@@ -252,7 +252,7 @@ namespace KalkulatorPOSK
         {
             if (!Backend.IsItFirstOperation() && Backend.IsNumberEntered())
             {
-                if (0 > Convert.ToDouble(Backend.ShowNumber()))
+                if (0 > Convert.ToDouble(Backend.ShowNumber())) //tutaj koniecznie TRY CATCH bo coś dziwnego dziej się z negacją
                 {
                     //negative number with parenthesis
                     ResultDisplay.Text = Backend.ShowFormerResult() + " " + Backend.ShowOperator() + " " + "(" + Backend.ShowNumber() + ")" + " =";
@@ -363,6 +363,16 @@ namespace KalkulatorPOSK
                     Button7.PerformClick();
                     break;
                 case Keys.D8:
+                    if (Control.ModifierKeys == Keys.Shift)
+                    {
+                        ButtonMultiplication.PerformClick();
+                    }
+                    else
+                    {
+                        Button8.PerformClick();
+                    }
+                    break;
+
                 case Keys.NumPad8:
                     Button8.PerformClick();
                     break;
@@ -371,9 +381,11 @@ namespace KalkulatorPOSK
                     Button9.PerformClick();
                     break;
                 case Keys.OemMinus:
+                case Keys.Subtract:
                     ButtonSubtraction.PerformClick();
                     break;
                 case Keys.Oemplus:
+
                     if (Control.ModifierKeys == Keys.Shift)
                     {
                         ButtonAddition.PerformClick();
@@ -383,10 +395,12 @@ namespace KalkulatorPOSK
                         ButtonEqual.PerformClick();
                     }
                     break;
-                case Keys.Enter:
-                    ButtonEqual.PerformClick();
+
+                case Keys.Add:
+                    ButtonAddition.PerformClick();
                     break;
                 case Keys.OemQuestion:
+                case Keys.Divide:
                     ButtonDivision.PerformClick();
                     break;
                 case Keys.Back:
@@ -402,6 +416,15 @@ namespace KalkulatorPOSK
                         ButtonNegation.PerformClick();
                     }
                     break;
+                case Keys.Decimal:
+                    ButtonComma.PerformClick();
+                    break;
+                case Keys.Oemcomma:
+                    if (Control.ModifierKeys != Keys.Shift)
+                    {
+                        ButtonComma.PerformClick();
+                    }
+                    break;
 
             }
         }
@@ -414,8 +437,8 @@ namespace KalkulatorPOSK
             {
                 case "Default":
                     BackColor = Color.LightGray;
-                    Clock.ForeColor = Color.Black;
-                    Clock.Font = NormalFontBig;
+                    DigitalClock.ForeColor = Color.Black;
+                    DigitalClock.Font = NormalFontBig;
 
                     Display.Font = NormalFont;
                     Display.ForeColor = Color.Black;
@@ -481,11 +504,11 @@ namespace KalkulatorPOSK
 
                 case "Cat":
                     BackColor = Color.LightPink;
-                    Clock.ForeColor = Color.Black;
+                    DigitalClock.ForeColor = Color.Black;
                     ResultDisplay.BackColor = Color.Pink;
                     Display.BackColor = Color.White;
 
-                    Clock.Font = CatFontBig;
+                    DigitalClock.Font = CatFontBig;
                     Display.Font = CatFont;
                     ResultDisplay.Font = CatFontSmall;
                     Display.ForeColor = Color.Black;
@@ -548,8 +571,8 @@ namespace KalkulatorPOSK
                 case "Digital": //digital skin 
 
                     BackColor = SystemColors.ControlDarkDark;
-                    Clock.ForeColor = Color.White;
-                    Clock.Font = DigitalFontBig;
+                    DigitalClock.ForeColor = Color.White;
+                    DigitalClock.Font = DigitalFontBig;
 
                     ButtonCancel.BackColor = Color.Red;
                     ButtonCancel.ForeColor = Color.White;
@@ -649,8 +672,8 @@ namespace KalkulatorPOSK
                     ResultDisplay.ForeColor = Color.Black;
                     Display.ForeColor = Color.Black;
 
-                    Clock.Font = new Font(fontDialogCustom.Font.FontFamily, NormalFontBig.Size - 2); //some of font styles are too big to be display fully
-                    Clock.ForeColor = Color.Black;
+                    DigitalClock.Font = new Font(fontDialogCustom.Font.FontFamily, NormalFontBig.Size - 2); //some of font styles are too big to be display fully
+                    DigitalClock.ForeColor = Color.Black;
 
                     #endregion changing font
 

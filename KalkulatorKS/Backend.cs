@@ -101,7 +101,7 @@
             return resultChanged;
         }
 
-        static public string CurrentDisplay() //Not complete
+        static public string CurrentDisplay() //Not complete result
         {
             return number;
         }
