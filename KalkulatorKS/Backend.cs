@@ -12,15 +12,15 @@
 
         static public bool EnterDigit(string digit) //or comma
         {
-            bool startedNewCycle = false;
+            bool startingNewCycle = false;
             if (number.Equals("") && newCycle)
             {
                 TabulaRasa();
-                startedNewCycle = true;
+                startingNewCycle = true;
             }
             number += digit;
             newCycle = false;
-            return startedNewCycle;
+            return startingNewCycle;
         }
 
         static public string ShowNumber()
@@ -119,14 +119,15 @@
         static public int DoTheMath()
         {
             int errorCode = 0; //by default set to success
-
-            switch (equationOperator)
+             
+                switch (equationOperator)
             {
                 case '+':
                     result = formerResult + Convert.ToDouble(number);
                     break;
                 case '-':
-                    result = formerResult - Convert.ToDouble(number); ;
+                    result = formerResult - Convert.ToDouble(number);
+                    
                     break;
                 case '/':
                     if (0 == Convert.ToDouble(number))
@@ -148,6 +149,7 @@
                     errorCode = -1; //unknown error
                     break;
             }
+            
             return errorCode;
         }
     }

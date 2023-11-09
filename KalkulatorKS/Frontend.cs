@@ -8,6 +8,7 @@ namespace KalkulatorPOSK
     {
 
         ColorDialog colorDialogCustom = new ColorDialog();
+       
         FontDialog fontDialogCustom = new FontDialog();
         #region skin fonts definition
         Font NormalFontBig = new Font("Segoe UI", 32); //font for skin - Default
@@ -122,12 +123,7 @@ namespace KalkulatorPOSK
                 //draw circle
                 AnalogClockLook.DrawEllipse(new Pen(Color.Black, 1f), 0, 0, WIDTH - 2, HEIGHT - 2);
 
-                //draw figure
-                //numbers
-                //AnalogClockLook.DrawString("12", new Font("Arial", 12), Brushes.Black, new PointF(90, 2));
-                //AnalogClockLook.DrawString("3", new Font("Arial", 12), Brushes.Black, new PointF(180, 84));
-                //AnalogClockLook.DrawString("6", new Font("Arial", 12), Brushes.Black, new PointF(90, 180));
-                //AnalogClockLook.DrawString("9", new Font("Arial", 12), Brushes.Black, new PointF(0, 88));
+     
 
                 //lines
                 AnalogClockLook.DrawString("|", new Font("Arial", 12), Brushes.Black, new PointF(95, 0));
@@ -250,33 +246,39 @@ namespace KalkulatorPOSK
 
         private void ButtonEqual_Click(object sender, EventArgs e)
         {
-            if (!Backend.IsItFirstOperation() && Backend.IsNumberEntered())
+            if (Backend.ShowNumber() != "-") //fix of negation throwing FormatExeption
+            { 
+                if (!Backend.IsItFirstOperation() && Backend.IsNumberEntered())
             {
-                if (0 > Convert.ToDouble(Backend.ShowNumber())) //tutaj koniecznie TRY CATCH bo coś dziwnego dziej się z negacją
-                {
-                    //negative number with parenthesis
-                    ResultDisplay.Text = Backend.ShowFormerResult() + " " + Backend.ShowOperator() + " " + "(" + Backend.ShowNumber() + ")" + " =";
-                }
-                else
-                {
-                    ResultDisplay.Text = Backend.ShowFormerResult() + " " + Backend.ShowOperator() + " " + Backend.ShowNumber() + " =";
-                }
+               
+                    if (0 > Convert.ToDouble(Backend.ShowNumber()))
+                    {
+                        //negative number with parenthesis
+                        ResultDisplay.Text = Backend.ShowFormerResult() + " " + Backend.ShowOperator() + " " + "(" + Backend.ShowNumber() + ")" + " =";
+                    }
+                    else
+                    {
+                        ResultDisplay.Text = Backend.ShowFormerResult() + " " + Backend.ShowOperator() + " " + Backend.ShowNumber() + " =";
+                    }
+                
+                
 
-                switch (Backend.DoTheMath())
-                {
-                    case 0:
-                        Display.Text = Convert.ToString(Backend.ShowResult());
-                        Backend.CircleOfLife();
-                        break;
-                    case -1:
-                        //add sth if needed
-                        break;
-                    case -2:
-                        Display.Text = "Cannot divide by 0";
-                        break;
-                    default:
-                        //add sth if needed
-                        break;
+                    switch (Backend.DoTheMath())
+                    {
+                        case 0:
+                            Display.Text = Convert.ToString(Backend.ShowResult());
+                            Backend.CircleOfLife();
+                            break;
+                        case -1:
+                            //add sth if needed
+                            break;
+                        case -2:
+                            Display.Text = "Cannot divide by 0";
+                            break;
+                        default:
+                            //add sth if needed
+                            break;
+                    }
                 }
             }
         }
@@ -643,38 +645,46 @@ namespace KalkulatorPOSK
                     JackRubberDuck.Visible = false;
 
                     #region coloring
-                    colorDialogCustom.ShowDialog();
+                    
+                   DialogResult dialogResultCustom= colorDialogCustom.ShowDialog();
 
-                    ButtonCancel.BackColor = Button0.BackColor = ButtonClear.BackColor = ButtonSubtraction.BackColor =
-                    Button1.BackColor = Button2.BackColor = Button3.BackColor = Button4.BackColor =
-                    Button5.BackColor = Button6.BackColor = Button7.BackColor = Button8.BackColor =
-                    Button9.BackColor = ButtonExponentiation.BackColor = ButtonComma.BackColor =
-                    ButtonDivision.BackColor = ButtonMultiplication.BackColor = ButtonNegation.BackColor =
-                    ButtonAddition.BackColor = ButtonEqual.BackColor = BackColor = colorDialogCustom.Color;
+                    if (dialogResultCustom==DialogResult.OK)
+                    {
+                        ButtonCancel.BackColor = Button0.BackColor = ButtonClear.BackColor = ButtonSubtraction.BackColor =
+                        Button1.BackColor = Button2.BackColor = Button3.BackColor = Button4.BackColor =
+                        Button5.BackColor = Button6.BackColor = Button7.BackColor = Button8.BackColor =
+                        Button9.BackColor = ButtonExponentiation.BackColor = ButtonComma.BackColor =
+                        ButtonDivision.BackColor = ButtonMultiplication.BackColor = ButtonNegation.BackColor =
+                        ButtonAddition.BackColor = ButtonEqual.BackColor = BackColor = colorDialogCustom.Color;
+                        Display.BackColor = Color.White;
+                        ResultDisplay.BackColor = Color.Silver;
+                    }
 
-                    Display.BackColor = Color.White;
-                    ResultDisplay.BackColor = Color.Silver;
+                   
 
-                    fontDialogCustom.ShowDialog();
+                    DialogResult dialogResultCustomFont=fontDialogCustom.ShowDialog();
                     #endregion coloring
 
-                    #region changing font                   
-                    ButtonCancel.Font = ButtonCancel.Font = ButtonClear.Font = ButtonClear.Font = Button0.Font = Button1.Font = Button2.Font =
-                    Button3.Font = Button4.Font = Button5.Font = Button6.Font = Button7.Font = Button8.Font = Button9.Font =
-                    ButtonEqual.Font = ButtonSubtraction.Font = ButtonDivision.Font = ButtonMultiplication.Font = ButtonNegation.Font =
-                    ButtonAddition.Font = ButtonComma.Font = ButtonExponentiation.Font = new Font(fontDialogCustom.Font.FontFamily, NormalFontButton.Size); ;
+                    #region changing font  
 
-                    ButtonCancel.ForeColor = Color.Black; //changing to default color
-                    ButtonClear.ForeColor = Color.Black;
+                    if (dialogResultCustomFont == DialogResult.OK)
+                    {
+                        ButtonCancel.Font = ButtonCancel.Font = ButtonClear.Font = ButtonClear.Font = Button0.Font = Button1.Font = Button2.Font =
+                        Button3.Font = Button4.Font = Button5.Font = Button6.Font = Button7.Font = Button8.Font = Button9.Font =
+                        ButtonEqual.Font = ButtonSubtraction.Font = ButtonDivision.Font = ButtonMultiplication.Font = ButtonNegation.Font =
+                        ButtonAddition.Font = ButtonComma.Font = ButtonExponentiation.Font = new Font(fontDialogCustom.Font.FontFamily, NormalFontButton.Size); 
 
-                    Display.Font = new Font(fontDialogCustom.Font.FontFamily, NormalFont.Size);
-                    ResultDisplay.Font = new Font(fontDialogCustom.Font.FontFamily, NormalFontSmall.Size);
-                    ResultDisplay.ForeColor = Color.Black;
-                    Display.ForeColor = Color.Black;
+                        ButtonCancel.ForeColor = Color.Black; //changing to default color
+                        ButtonClear.ForeColor = Color.Black;
+                        if (Display.BackColor == Color.Black) Display.ForeColor = Color.White; 
+                        Display.Font = new Font(fontDialogCustom.Font.FontFamily, NormalFont.Size);
+                        ResultDisplay.Font = new Font(fontDialogCustom.Font.FontFamily, NormalFontSmall.Size);
+                        ResultDisplay.ForeColor = Color.Black;
+                        Display.ForeColor = Color.Black;
 
-                    DigitalClock.Font = new Font(fontDialogCustom.Font.FontFamily, NormalFontBig.Size - 2); //some of font styles are too big to be display fully
-                    DigitalClock.ForeColor = Color.Black;
-
+                        DigitalClock.Font = new Font(fontDialogCustom.Font.FontFamily, NormalFontBig.Size - 2); //some of font styles are too big to be display fully
+                        DigitalClock.ForeColor = Color.Black;
+                    }
                     #endregion changing font
 
                     break;
