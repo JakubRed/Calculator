@@ -408,6 +408,9 @@ namespace KalkulatorPOSK
                 case Keys.Back:
                     ButtonCancel.PerformClick();
                     break;
+                case Keys.C:
+                    ButtonClear.PerformClick();
+                    break;
                 case Keys.Multiply:
                 case Keys.X:
                     ButtonMultiplication.PerformClick();
@@ -641,8 +644,7 @@ namespace KalkulatorPOSK
 
                 case "Custom":
 
-                    CatPic.Visible = false;
-                    JackRubberDuck.Visible = false;
+                    
 
                     #region coloring
                     
@@ -676,11 +678,12 @@ namespace KalkulatorPOSK
 
                         ButtonCancel.ForeColor = Color.Black; //changing to default color
                         ButtonClear.ForeColor = Color.Black;
-                        if (Display.BackColor == Color.Black) Display.ForeColor = Color.White; 
+                       
                         Display.Font = new Font(fontDialogCustom.Font.FontFamily, NormalFont.Size);
                         ResultDisplay.Font = new Font(fontDialogCustom.Font.FontFamily, NormalFontSmall.Size);
                         ResultDisplay.ForeColor = Color.Black;
                         Display.ForeColor = Color.Black;
+                        if (Display.BackColor == Color.Black) Display.ForeColor = Color.White;
 
                         DigitalClock.Font = new Font(fontDialogCustom.Font.FontFamily, NormalFontBig.Size - 2); //some of font styles are too big to be display fully
                         DigitalClock.ForeColor = Color.Black;
