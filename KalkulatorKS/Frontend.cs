@@ -49,7 +49,6 @@ namespace KalkulatorPOSK
         Bitmap bmp;
         Graphics AnalogClockLook;
 
-
         private void AnalogClock_Click(object sender, EventArgs e)
         {
             isAnalogClockVisible = !isAnalogClockVisible;
@@ -643,8 +642,6 @@ namespace KalkulatorPOSK
                     break;
 
                 case "Custom":
-
-                    
 
                     #region coloring
                     
