@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kasia\\Desktop\\Kalkulator posk\\Calculator\\KalkulatorKS\\KalkulatorPOSK.csproj",
+      "projectUniqueName": "C:\\Users\\Kasia\\Desktop\\POSK\\Kalkulator posk\\Calculator\\KalkulatorKS\\KalkulatorPOSK.csproj",
       "projectName": "KalkulatorPOSK",
-      "projectPath": "C:\\Users\\Kasia\\Desktop\\Kalkulator posk\\Calculator\\KalkulatorKS\\KalkulatorPOSK.csproj",
+      "projectPath": "C:\\Users\\Kasia\\Desktop\\POSK\\Kalkulator posk\\Calculator\\KalkulatorKS\\KalkulatorPOSK.csproj",
       "packagesPath": "C:\\Users\\Kasia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kasia\\Desktop\\Kalkulator posk\\Calculator\\KalkulatorKS\\obj\\",
+      "outputPath": "C:\\Users\\Kasia\\Desktop\\POSK\\Kalkulator posk\\Calculator\\KalkulatorKS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Kasia\\AppData\\Roaming\\NuGet\\NuGet.Config",
